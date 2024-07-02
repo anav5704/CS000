@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "DM Sans";
+    src: url("/fonts/dm-sans.ttf") format("TrueType");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@layer base {
+    body {
+        @apply font-sans bg-white;
+    }
+}
+
+@layer components {
+    .git-gradient {
+        @apply bg-gradient-to-r from-red-500 to-rose-500 bg-clip-text text-transparent;
+    }
+
+    .github-gradient {
+        @apply bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent;
+    }
+
+    .glow {
+        position: relative;
+        z-index: 1;
+    }
+
+    .glow::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+            circle,
+            rgba(255, 0, 0, 0.25),
+            rgba(0, 0, 0, 0)
+        );
+        filter: blur(100px);
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    .glow::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+            circle,
+            rgba(111, 0, 255, 0.25),
+            rgba(0, 0, 0, 0)
+        );
+        filter: blur(100px);
+        border-radius: 50%;
+        z-index: -1;
+    }
+}
