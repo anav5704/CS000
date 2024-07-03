@@ -1,0 +1,37 @@
+---
+import type { Icon } from "@geist-ui/icons"
+
+interface Props {
+    title: string
+    description: string
+    icon: Icon
+    type: "git" | "github"
+}
+
+const { title, description, icon: Icon, type } = Astro.props
+
+let style = ""
+let background = ""
+
+switch (type) {
+    case "git":
+        style = "bg-git-fade border border-rose-500"
+        background = "bg-git-gradient"
+        break
+    case "github":
+        style = "bg-github-fade border border-prple-500"
+        background = "bg-github-gradient"
+        break
+}
+---
+
+<div
+    class={style +
+        " flex flex-col justify-end col-span-1  rounded-3xl p-5 gap-3"}
+>
+    <div class={background + " rounded-2xl w-fit p-5 text-white"}>
+        {(<Icon size={25} />)}
+    </div>
+    <h4 class="font-bold text-2xl">{title}</h4>
+    {description}
+</div>
