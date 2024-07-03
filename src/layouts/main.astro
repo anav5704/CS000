@@ -1,4 +1,6 @@
 ---
+import Navbar from "../components/Navbar.astro"
+import Container from "../components/Container.astro"
 import "../styles/globals.css"
 ---
 
@@ -11,6 +13,9 @@ import "../styles/globals.css"
         <title>CS000 - Collaborative Coding with Git and GitHub!</title>
     </head>
     <body>
-        <slot />
+        <Navbar />
+        <Container>
+            <slot />
+        </Container>
     </body>
 </html>

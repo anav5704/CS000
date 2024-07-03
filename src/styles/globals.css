@@ -12,17 +12,37 @@
 
 @layer base {
     body {
-        @apply font-sans bg-white;
+        @apply font-sans bg-white w-screen overflow-x-hidden text-lg;
+    }
+
+    .hero-description {
+        @apply text-center py-7 text-2xl;
     }
 }
 
 @layer components {
-    .git-gradient {
-        @apply bg-gradient-to-r from-red-500 to-rose-500 bg-clip-text text-transparent;
+    .text-git-gradient {
+        @apply bg-gradient-to-br from-red-500 to-pink-500 bg-clip-text text-transparent;
     }
 
-    .github-gradient {
-        @apply bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent;
+    .bg-git-gradient {
+        @apply bg-gradient-to-br from-red-500 to-pink-500;
+    }
+
+    .bg-git-fade {
+        @apply bg-gradient-to-t from-rose-100 to-transparent border border-pink-500;
+    }
+
+    .text-github-gradient {
+        @apply bg-gradient-to-br from-purple-500 to-blue-500 bg-clip-text text-transparent;
+    }
+
+    .bg-github-gradient {
+        @apply bg-gradient-to-br from-purple-500 to-blue-500;
+    }
+
+    .bg-github-fade {
+        @apply bg-gradient-to-t from-purple-100 to-transparent border border-purple-500;
     }
 
     .glow {

@@ -1,16 +1,13 @@
 ---
 export const prerender = true
+import Hero from "../components/Hero.astro"
+import Git from "../components/Git.astro"
 import Layout from "../layouts/main.astro"
+import GitHub from "../components/GitHub.astro"
 ---
 
 <Layout>
-    <main class="text-center h-screen w-screen grid place-content-center">
-        <h1 class="glow text-[100px] font-bold leading-none">
-            Collaborative Coding
-            <br />
-            <span class="git-gradient">Git</span> and <span
-                class="github-gradient">GitHub</span
-            >
-        </h1>
-    </main>
+    <Hero />
+    <Git />
+    <GitHub />
 </Layout>
