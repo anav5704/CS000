@@ -1,0 +1,40 @@
+---
+import { UploadCloud, Share2, Users } from "@geist-ui/icons"
+
+import Header from "./Header.astro"
+import Grid from "./Grid.astro"
+import Card from "./Card.astro"
+---
+
+<section class="mb-32">
+    <Header
+        >And No Way <span class="text-github-gradient">GitHub</span> Is Also <span
+            class="text-github-gradient">Useful</span
+        >, Right?</Header
+    >
+    <p class="hero-description">
+        Wrong! GitHub is the perfect platform for hosting
+        <br />
+        and sharing your code with other people.
+    </p>
+    <Grid>
+        <Card
+            title="Hosting"
+            description="GitHub lets you store your code on the internet. No more USB's or Google Drive."
+            icon={UploadCloud}
+            type="github"
+        />
+        <Card
+            title="Sharing"
+            description="GitHub lets link your repoositories to your partners. No more Viber or Email"
+            icon={Share2}
+            type="github"
+        />
+        <Card
+            title="Collaboration"
+            description="GitHub provies tools to manage a single codebase with multple developers."
+            icon={Users}
+            type="github"
+        />
+    </Grid>
+</section>
