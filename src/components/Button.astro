@@ -1,0 +1,40 @@
+---
+interface Props {
+    size: "sm" | "md" | "lg"
+    variant: "git" | "github" | "default"
+}
+
+const { size, variant } = Astro.props
+
+let sizeStyle = ""
+let variantStyle = ""
+
+switch (size) {
+    case "sm":
+        sizeStyle = "px-4 py-1 text-base rounded-xl"
+        break
+    case "md":
+        sizeStyle = "px-5 py-2 text-lg rounded-xl"
+        break
+    case "lg":
+        sizeStyle = "px-6 py-3 text-xl rounded-xl"
+        break
+}
+
+switch (variant) {
+    case "git":
+        variantStyle = "bg-git-gradient text-white shadow-2xl shadow-rose-500"
+        break
+    case "github":
+        variantStyle =
+            "bg-github-gradient text-white shadow-2xl shadow-purple-500"
+        break
+    case "default":
+        variantStyle = "bg-zinc-200"
+        break
+}
+---
+
+<button class={sizeStyle + " " + variantStyle}>
+    <slot />
+</button>
