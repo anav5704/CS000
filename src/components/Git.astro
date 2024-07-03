@@ -1,0 +1,38 @@
+---
+import { Save, Heart, GitBranch } from "@geist-ui/icons"
+import Header from "./Header.astro"
+import Grid from "./Grid.astro"
+import Card from "./Card.astro"
+---
+
+<section class="mb-32">
+    <Header>
+        Ughhh, Is Learng <span class="text-git-gradient">Git</span> Really That
+        <span class="text-git-gradient">Important</span>?
+    </Header>
+    <p class="hero-description">
+        Hell Yeah! Git keeps your projects organized and helps
+        <br />
+        you work seamlessly with group members.
+    </p>
+    <Grid>
+        <Card
+            title="Easy To Use"
+            description="Git has tons of easy yet insanely powerful commands to manage your codeing projects."
+            icon={Heart}
+            type="git"
+        />
+        <Card
+            title="Versioning"
+            description="Git lets you keep track of changes to your code over time, so you can always go back."
+            icon={Save}
+            type="git"
+        />
+        <Card
+            title="Bracnhes"
+            description="Git also yets you split your code into different universes and work on them independently."
+            icon={GitBranch}
+            type="git"
+        />
+    </Grid>
+</section>
