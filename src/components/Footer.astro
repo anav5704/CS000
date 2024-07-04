@@ -1,0 +1,120 @@
+---
+const links = [
+    {
+        title: "Product",
+        subLinks: [
+            {
+                label: "CS000 Solo",
+                href: "/"
+            },
+            {
+                label: "CS000 Team",
+                href: "/"
+            },
+            {
+                label: "CS000 Pro",
+                href: "/"
+            },
+            {
+                label: "CS000 Bonus",
+                href: "/"
+            }
+        ]
+    },
+    {
+        title: "Links",
+        subLinks: [
+            {
+                label: "Home",
+                href: "/"
+            },
+            {
+                label: "Pricing",
+                href: "/"
+            },
+            {
+                label: "Lessons",
+                href: "/"
+            },
+            {
+                label: "About",
+                href: "/"
+            }
+        ]
+    },
+    {
+        title: "Nerds",
+        subLinks: [
+            {
+                label: "Docs",
+                href: "/"
+            },
+            {
+                label: " GitHub",
+                href: "/"
+            },
+            {
+                label: "Contrubute",
+                href: "/"
+            },
+            {
+                label: "README",
+                href: "/"
+            }
+        ]
+    },
+    {
+        title: "Legal",
+        subLinks: [
+            {
+                label: "Terms of service",
+                href: "/"
+            },
+            {
+                label: "Privacy Policy",
+                href: "/"
+            },
+            {
+                label: "Code of Conduct",
+                href: "/"
+            },
+            {
+                label: "Disclaimer",
+                href: "/"
+            }
+        ]
+    }
+]
+---
+
+<div class="relative border-t border-zinc-200 max-w-screen py-10">
+    <footer class="w-3/4 mx-auto flex justify-between">
+        <div class="flex flex-col grow justify-between">
+            <p>CS000</p>
+            <p class="text-zinc-500">
+                Created by <a
+                    class="underline text-black font-bold"
+                    target="_blank"
+                    href="https://anav.dev">Anav</a
+                >
+            </p>
+        </div>
+        <div class="flex">
+            {
+                links.map((link, index) => (
+                    <div class="md:ml-20 flex flex-col gap-2">
+                        <h4>{link.title}</h4>
+                        {link.subLinks.map((subLink, index) => (
+                            <a
+                                href={subLink.href}
+                                class="text-zinc-500 transition-colors no-underline hover:text-black cursor-pointer"
+                            >
+                                {subLink.label}
+                            </a>
+                        ))}
+                    </div>
+                ))
+            }
+        </div>
+    </footer>
+</div>
