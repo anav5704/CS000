@@ -1,0 +1,28 @@
+---
+// source: https://hutte.io/trails/git-based-development-statistics/
+const statistics = [
+    {
+        title: "Open Source Projects Use Version Control.",
+        value: "99%"
+    },
+    {
+        title: " Developers Believe Git Made Collaboration Easier.",
+        value: "85%"
+    },
+    {
+        title: "Developer Job Listings In 2023 Mentioned Git.",
+        value: "67% "
+    }
+]
+---
+
+<section class="divide-x divide-zinc-200 mb-32 grid grid-cols-3 text-center">
+    {
+        statistics.map((stat) => (
+            <div>
+                <h2 class="text-5xl font-extrabold">{stat.value}</h2>
+                <p class="text-centr text-balance text-2xl">{stat.title}</p>
+            </div>
+        ))
+    }
+</section>
