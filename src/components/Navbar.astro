@@ -1,9 +1,11 @@
-<nav
-    class="z-10 border-b border-black bg-white fixed top-0 w-screen h-[10vh] flex items-center justify-center"
+<div
+    class="z-10 backdrop-blur-xl bg-white/50 fixed top-0 w-screen h-[10vh] flex items-center justify-center"
 >
-    <div class="w-3/4 mx-auto flex items-center justify-between">
+    <nav
+        class="[&>div>a]:no-underline w-3/4 mx-auto flex items-center justify-between"
+    >
         <div>
-            <a href="/">CS000</a>
+            <a class="!text-black" href="/">CS000</a>
         </div>
         <div class="space-x-10">
             <a href="/">Lessons</a>
@@ -11,12 +13,14 @@
             <a href="/">Contribute</a>
             <a href="/">About</a>
         </div>
-        <a href="/"> Who Made This? </a>
-    </div>
-</nav>
+        <div>
+            <a href="/"> Enroll Now</a>
+        </div>
+    </nav>
 
-<!-- <style>
-    nav a {
-        @apply text-zinc-400 hover:text-black transition;
-    }
-</style> -->
+    <style>
+        nav a {
+            @apply text-zinc-500 hover:text-black transition;
+        }
+    </style>
+</div>

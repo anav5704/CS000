@@ -10,5 +10,8 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
     output: 'server',
     adapter: vercelServerless(),
+    devToolbar: {
+        enabled: false
+    },
     integrations: [mdx(), tailwind(), react(), sitemap()]
 });

@@ -3,7 +3,7 @@ import Button from "../components/Button.astro"
 ---
 
 <section
-    class="flex flex-col justify-center gap-8 items-center text-center h-screen"
+    class="flex flex-col justify-center gap-8 items-center text-center py-24 w-screen overflow-x-hiddden"
 >
     <h1 class="glow text-[100px] font-bold leading-none">
         Collaborative Coding
@@ -17,8 +17,5 @@ import Button from "../components/Button.astro"
         <br />
         Don't be the guy that emails code back and forth 😐
     </p>
-    <div class="space-x-7">
-        <Button size="lg" variant="github">Enroll Now - Its' Free</Button>
-        <!-- <Button size="lg" variant="default">Why CS000?</Button> -->
-    </div>
+    <Button size="lg" variant="github">Enroll Now - Its' Free</Button>
 </section>

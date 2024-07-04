@@ -1,0 +1,53 @@
+---
+import Indeevar from "../images/indeevar.jpg"
+import Jasveen from "../images/jasveen.jpg"
+import Anav from "../images/anav.jpg"
+
+import { Image } from "astro:assets"
+import Header from "./Header.astro"
+
+const images = [Indeevar, Jasveen, Anav]
+
+const cols = [...images, ...images, ...images, ...images]
+const rows = [1, 2, 3]
+const loops = [1, 2]
+---
+
+<section class="mb-32">
+    <Header
+        >Loved By <span class="text-git-gradient">Students</span>, Trusted By <span
+            class="text-github-gradient">Universities</span
+        >.</Header
+    >
+    <p class="hero-description glow">
+        CS000 has helped out <b>100+</b> studentets and is recommended by lecutreres
+        <br />
+        from <a href="/">The University of the South Pacific</a> and <a href="/"
+            >Fiji National University</a
+        >.
+    </p>
+    <div class="fade relative grid gap-10 w-screen overflow-x-hidden">
+        {
+            rows.map((row) => (
+                <div class="w-full inline-flex flex-nowrap">
+                    {loops.map(() => (
+                        <ul
+                            class={`${row % 2 == 0 ? "animate-infinite-scroll-left" : "animate-infinite-scroll-right"} [&_li]:mx-5 flex items-center justify-center md:justify-start`}
+                        >
+                            {cols.map((col) => (
+                                <li class="overflow-hidden rounded-2xl h-16 w-16">
+                                    <Image
+                                        src={col}
+                                        alt="image"
+                                        width={80}
+                                        height={80}
+                                    />
+                                </li>
+                            ))}
+                        </ul>
+                    ))}
+                </div>
+            ))
+        }
+    </div>
+</section>

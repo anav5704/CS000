@@ -1,6 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro"
-import Container from "../components/Container.astro"
+import Footer from "../components/Footer.astro"
 import "../styles/globals.css"
 ---
 
@@ -12,10 +12,9 @@ import "../styles/globals.css"
         <meta name="generator" content={Astro.generator} />
         <title>CS000 - Collaborative Coding with Git and GitHub!</title>
     </head>
-    <body>
+    <body class="pt-[10vh]">
         <Navbar />
-        <Container>
-            <slot />
-        </Container>
+        <slot />
+        <Footer />
     </body>
 </html>

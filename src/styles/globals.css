@@ -11,8 +11,16 @@
 }
 
 @layer base {
+    * {
+        @apply underline-offset-4;
+    }
+
     body {
         @apply font-sans bg-white w-screen overflow-x-hidden text-lg;
+    }
+
+    a {
+        @apply underline;
     }
 
     .hero-description {
@@ -30,7 +38,7 @@
     }
 
     .bg-git-fade {
-        @apply bg-gradient-to-t from-rose-100 to-transparent border border-pink-500;
+        @apply bg-gradient-to-tl from-rose-100 to-transparent;
     }
 
     .text-github-gradient {
@@ -42,7 +50,25 @@
     }
 
     .bg-github-fade {
-        @apply bg-gradient-to-t from-purple-100 to-transparent border border-purple-500;
+        @apply bg-gradient-to-tl from-purple-100 to-transparent;
+    }
+
+    .bg-default-fade {
+        @apply bg-gradient-to-tl from-zinc-100 to-transparent border;
+    }
+
+    .fade::after {
+        @apply absolute top-0 left-0 h-full w-screen;
+        content: " ";
+        background: linear-gradient(
+            90deg,
+            #ffffff,
+            transparent 20%,
+            transparent 80%,
+            #ffffff
+        );
+        position: absolute;
+        inset: 0;
     }
 
     .glow {
