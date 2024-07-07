@@ -30,7 +30,7 @@
 
 @layer components {
     .content {
-        @apply space-y-3 md:space-y-7;
+        @apply space-y-3 md:space-y-5;
     }
 
     .text-git-gradient {
@@ -42,7 +42,7 @@
     }
 
     .bg-git-fade {
-        @apply bg-gradient-to-tl from-rose-100 to-transparent;
+        @apply bg-gradient-to-tl from-rose-100 to-transparent border border-rose-500;
     }
 
     .text-github-gradient {
@@ -54,7 +54,7 @@
     }
 
     .bg-github-fade {
-        @apply bg-gradient-to-tl from-purple-100 to-transparent;
+        @apply bg-gradient-to-tl from-purple-100 to-transparent border border-purple-500;
     }
 
     .bg-default-fade {
