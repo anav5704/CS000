@@ -5,6 +5,7 @@ import Anav from "../images/anav.jpg"
 
 import { Image } from "astro:assets"
 import Header from "./Header.astro"
+import Description from "./Description.astro"
 
 const images = [Indeevar, Jasveen, Anav]
 
@@ -13,26 +14,24 @@ const rows = [1, 2, 3]
 const loops = [1, 2]
 ---
 
-<section class="mb-32">
+<section class="content">
     <Header
         >Loved By <span class="text-git-gradient">Students</span>, Trusted By <span
             class="text-github-gradient">Universities</span
-        >.</Header
-    >
-    <p class="hero-description glow">
+        >.
+    </Header>
+    <Description>
         CS000 has helped out <b>100+</b> studentets and is recommended by lecturers
         <br />
-        from <a href="/">The University of the South Pacific</a> and <a href="/"
-            >Fiji National University</a
-        >.
-    </p>
-    <div class="fade relative grid gap-10 w-screen overflow-x-hidden">
+        from The University of the South Pacific and Fiji National University.
+    </Description>
+    <div class="fade relative grid gap-5 md:gap-10 w-screen overflow-x-hidden">
         {
             rows.map((row) => (
                 <div class="w-full inline-flex flex-nowrap">
                     {loops.map(() => (
                         <ul
-                            class={`${row % 2 == 0 ? "animate-infinite-scroll-left" : "animate-infinite-scroll-right"} [&_li]:mx-5 flex items-center justify-center md:justify-start`}
+                            class={`${row % 2 == 0 ? "animate-infinite-scroll-left" : "animate-infinite-scroll-right"} [&_li]:md:mx-5 [&_li]:mx-2.5 flex items-center justify-center md:justify-start`}
                         >
                             {cols.map((col) => (
                                 <li class="overflow-hidden rounded-2xl h-16 w-16">

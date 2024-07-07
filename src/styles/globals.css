@@ -29,6 +29,10 @@
 }
 
 @layer components {
+    .content {
+        @apply space-y-3 md:space-y-7;
+    }
+
     .text-git-gradient {
         @apply bg-gradient-to-br from-red-500 to-pink-500 bg-clip-text text-transparent;
     }

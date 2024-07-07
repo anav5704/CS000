@@ -1,5 +1,5 @@
 ---
-const links = [
+const links1 = [
     {
         title: "Lessons",
         subLinks: [
@@ -41,7 +41,10 @@ const links = [
                 href: "/"
             }
         ]
-    },
+    }
+]
+
+const links2 = [
     {
         title: "Nerds",
         subLinks: [
@@ -87,11 +90,15 @@ const links = [
 ]
 ---
 
-<div class="relative border-t border-zinc-200 max-w-screen py-10">
-    <footer class="w-3/4 mx-auto flex justify-between">
-        <div class="flex flex-col grow justify-between">
-            <p>CS000</p>
-            <p class="text-zinc-500">
+<div class="relative border-t border-zinc-200 max-w-screen">
+    <footer
+        class="w-full md:w-11/12 lg:w-3/4 mx-auto flex flex-col md:flex-row justify-between"
+    >
+        <div
+            class="flex flex-row md:flex-col grow md:justify-between justify-start p-5"
+        >
+            <p class="w-1/2 md:w-fit">CS000</p>
+            <p class="text-zinc-500 w-1/2 md:w-fit">
                 Created by <a
                     class="underline text-black font-bold"
                     target="_blank"
@@ -99,22 +106,41 @@ const links = [
                 >
             </p>
         </div>
-        <div class="flex">
-            {
-                links.map((link, index) => (
-                    <div class="md:ml-20 flex flex-col gap-2">
-                        <h4>{link.title}</h4>
-                        {link.subLinks.map((subLink, index) => (
-                            <a
-                                href={subLink.href}
-                                class="text-zinc-500 transition-colors no-underline hover:text-black cursor-pointer"
-                            >
-                                {subLink.label}
-                            </a>
-                        ))}
-                    </div>
-                ))
-            }
+        <div class="flex flex-col md:flex-row gap-5 p-5">
+            <div class="flex">
+                {
+                    links1.map((link, index) => (
+                        <div class="w-1/2 md:w-fit md:ml-20 flex flex-col gap-2">
+                            <h4>{link.title}</h4>
+                            {link.subLinks.map((subLink, index) => (
+                                <a
+                                    href={subLink.href}
+                                    class="text-zinc-500 transition-colors no-underline hover:text-black cursor-pointer"
+                                >
+                                    {subLink.label}
+                                </a>
+                            ))}
+                        </div>
+                    ))
+                }
+            </div>
+            <div class="flex">
+                {
+                    links2.map((link, index) => (
+                        <div class="w-1/2 md:w-fit md:ml-20 flex flex-col gap-2">
+                            <h4>{link.title}</h4>
+                            {link.subLinks.map((subLink, index) => (
+                                <a
+                                    href={subLink.href}
+                                    class="text-zinc-500 transition-colors no-underline hover:text-black cursor-pointer"
+                                >
+                                    {subLink.label}
+                                </a>
+                            ))}
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     </footer>
 </div>

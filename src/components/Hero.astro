@@ -1,21 +1,22 @@
 ---
 import Button from "../components/Button.astro"
+import Description from "./Description.astro"
 ---
 
 <section
-    class="flex flex-col justify-center gap-8 items-center text-center py-24 w-screen overflow-x-hiddden"
+    class="content flex flex-col justify-center items-center text-center overflow-x-hiddden"
 >
-    <h1 class="glow text-[100px] font-bold leading-none">
+    <h1 class="md:glow text-6xl md:text-[100px] font-bold leading-none">
         Collaborative Coding
         <br />
         <span class="text-git-gradient">Git</span> and <span
             class="text-github-gradient">GitHub</span
         >
     </h1>
-    <p class="text-2xl">
-        Learn how to work on coding grouop projects the modern way.
+    <Description>
+        Learn how to work on coding group projects the modern way.
         <br />
         Don't be the guy that emails code back and forth 😐
-    </p>
+    </Description>
     <Button size="lg" variant="github">Enroll Now - It's Free</Button>
 </section>

@@ -3,18 +3,20 @@ import { Save, Heart, GitBranch } from "@geist-ui/icons"
 import Header from "./Header.astro"
 import Grid from "./Grid.astro"
 import Card from "./Card.astro"
+import Description from "./Description.astro"
 ---
 
-<section class="mb-32">
+<section class="content">
     <Header>
         Ugh, Is Learning <span class="text-git-gradient">Git</span> Really That
         <span class="text-git-gradient">Important</span>?
     </Header>
-    <p class="hero-description">
+    <Description>
         Hell Yeah! Git keeps your projects organized and helps
         <br />
         you work seamlessly with group members.
-    </p>
+    </Description>
+
     <Grid>
         <Card
             title="Easy To Use"

@@ -1,4 +1,7 @@
 ---
+import Header from "./Header.astro"
+import Descriotion from "./Description.astro"
+
 // source: https://hutte.io/trails/git-based-development-statistics/
 const statistics = [
     {
@@ -16,12 +19,14 @@ const statistics = [
 ]
 ---
 
-<section class="divide-x divide-zinc-200 mb-32 grid grid-cols-3 text-center">
+<section
+    class="divide-x divide-zinc-200 grid grod-cols-1 md:grid-cols-3 text-center gap-10"
+>
     {
         statistics.map((stat) => (
             <div>
-                <h2 class="text-5xl font-extrabold">{stat.value}</h2>
-                <p class="text-centr text-balance text-2xl">{stat.title}</p>
+                <Header>{stat.value}</Header>
+                <Descriotion>{stat.title}</Descriotion>
             </div>
         ))
     }
