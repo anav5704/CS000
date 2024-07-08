@@ -1,29 +1,33 @@
 {
-  "name": "",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.7.0",
-    "@astrojs/mdx": "^3.1.2",
-    "@astrojs/react": "^3.6.0",
-    "@astrojs/sitemap": "^3.1.6",
-    "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vercel": "^7.7.2",
-    "@fontsource-variable/dm-sans": "^5.0.6",
-    "@geist-ui/icons": "^1.0.2",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "astro": "^4.11.3",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5.5.2"
-  }
+    "name": "",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro check && astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.7.0",
+        "@astrojs/mdx": "^3.1.2",
+        "@astrojs/node": "^8.3.2",
+        "@astrojs/react": "^3.6.0",
+        "@astrojs/sitemap": "^3.1.6",
+        "@astrojs/tailwind": "^5.1.0",
+        "@astrojs/vercel": "^7.7.2",
+        "@auth/core": "^0.32.0",
+        "@fontsource-variable/dm-sans": "^5.0.6",
+        "@geist-ui/icons": "^1.0.2",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
+        "astro": "^4.11.3",
+        "astro-clerk-auth": "^0.10.0",
+        "auth-astro": "^4.1.2",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "tailwindcss": "^3.4.4",
+        "typescript": "^5.5.2"
+    }
 }

@@ -109,10 +109,10 @@ const links2 = [
         <div class="flex flex-col md:flex-row gap-5 p-5">
             <div class="flex">
                 {
-                    links1.map((link, index) => (
+                    links1.map((link) => (
                         <div class="w-1/2 md:w-fit md:ml-20 flex flex-col gap-2">
                             <h4>{link.title}</h4>
-                            {link.subLinks.map((subLink, index) => (
+                            {link.subLinks.map((subLink) => (
                                 <a
                                     href={subLink.href}
                                     class="text-zinc-500 transition-colors no-underline hover:text-black cursor-pointer"
@@ -126,10 +126,10 @@ const links2 = [
             </div>
             <div class="flex">
                 {
-                    links2.map((link, index) => (
+                    links2.map((link) => (
                         <div class="w-1/2 md:w-fit md:ml-20 flex flex-col gap-2">
                             <h4>{link.title}</h4>
-                            {link.subLinks.map((subLink, index) => (
+                            {link.subLinks.map((subLink) => (
                                 <a
                                     href={subLink.href}
                                     class="text-zinc-500 transition-colors no-underline hover:text-black cursor-pointer"

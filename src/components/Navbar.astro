@@ -1,3 +1,8 @@
+---
+import { SignedIn, SignedOut } from "astro-clerk-auth/components/control"
+import { UserButton } from "astro-clerk-auth/components/interactive"
+---
+
 <div
     class="border-b broder-zinc-3200 p-5 md:px-0 z-10 backdrop-blur-xl bg-white/50 fixed top-0 w-screen flex items-center justify-center"
 >
@@ -14,12 +19,19 @@
             <a href="/about">About</a>
         </div>
         <div>
-            <a href="/"> Enroll Now</a>
+            <SignedIn>
+                <UserButton />
+            </SignedIn>
+
+            <SignedOut>
+                <a href="/auth/signup">Get Started</a>
+            </SignedOut>
         </div>
     </nav>
 
     <style>
-        nav a {
+        a,
+        button {
             @apply text-zinc-500 hover:text-black transition;
         }
     </style>
