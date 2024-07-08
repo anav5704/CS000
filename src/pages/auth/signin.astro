@@ -1,0 +1,31 @@
+---
+import { SignIn } from "astro-clerk-auth/components/interactive"
+import Layout from "../../layouts/auth.astro"
+import "../../styles/globals.css"
+---
+
+<Layout title="Sign In" theme="git">
+    <SignIn
+        routing="hash"
+        appearance={{
+            elements: {
+                socialButtons: {
+                    gap: "25px",
+                    height: "40px"
+                },
+                cardBox: {
+                    width: "450px",
+                    boxShadow: "none",
+                    borderRadius: "0px 0px 20px 20px"
+                },
+                card: {
+                    borderRadius: "20px 20px 0px 0px"
+                }
+            },
+            variables: {
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "16px"
+            }
+        }}
+    />
+</Layout>
