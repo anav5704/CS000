@@ -7,6 +7,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
+    site: "https://cs000.anav.dev",
     output: 'server',
     adapter: vercelServerless(),
     devToolbar: {

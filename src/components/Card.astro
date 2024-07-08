@@ -1,14 +1,16 @@
 ---
 import type { Icon } from "@geist-ui/icons"
+import { Check } from "@geist-ui/icons"
 
 interface Props {
     title: string
     description: string
     icon: Icon
+    items?: string[]
     type: "git" | "github"
 }
 
-const { title, description, icon: Icon, type } = Astro.props
+const { title, description, icon: Icon, items, type } = Astro.props
 
 let style = ""
 let background = ""
@@ -34,4 +36,16 @@ switch (type) {
     </div>
     <h4 class="font-bold text-2xl">{title}</h4>
     {description}
+    {
+        items && (
+            <ul>
+                {items.map((item) => (
+                    <li class="flex items-center gap-2">
+                        <Check size={28} />
+                        {item}
+                    </li>
+                ))}
+            </ul>
+        )
+    }
 </div>

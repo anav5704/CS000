@@ -1,19 +1,70 @@
 ---
 export const prerender = true
-import Hero from "../components/Hero.astro"
-import Stats from "../components/Blocks/Statistics.astro"
-import Git from "../components/Blocks/Git.astro"
 import Layout from "../layouts/main.astro"
-import GitHub from "../components/Blocks/GitHub.astro"
-import Impact from "../components/Blocks/Impact.astro"
-import CTA from "../components/Blocks/CTA.astro"
+import LessonsHero from "../components/Blocks/LessosHero.astro"
+import Card from "../components/Card.astro"
+import Container from "../components/Container.astro"
+import { User, Users, Zap, Gift } from "@geist-ui/icons"
+
+const lessons = [
+    {
+        icon: User,
+        title: "Lesson 1: Solo",
+        description:
+            "This lesson will introduce you to the basics of Git and GitHub. It will prepare you to use these tools for indiviaual assignements and persoonal prjects.",
+        items: [
+            "Setup Git and GitHub",
+            "Make your first Repo",
+            "Push code to GitHub"
+        ],
+        type: "git"
+    },
+    {
+        icon: Users,
+        title: "Lesson 2: Team",
+        description:
+            "You're gonna need a friend for this one. This losson will go over how multiple people can work on the same project at the same time.",
+        items: [
+            "Fork and Clone Repos",
+            "Create Pull Requests",
+            "Merge Pull Requests"
+        ],
+        type: "github"
+    },
+    {
+        icon: Zap,
+        title: "Lesson 3: Pro",
+        description:
+            "Shits about to get real. This lessonon will go over how Git is used in the real world and some best practices to go along with it.",
+        items: ["Git Branching", "Git Workflows", "Writing Documentation"],
+        type: "git"
+    },
+    {
+        icon: Gift,
+        title: "Bonus Lesson",
+        description:
+            "For those who are willing to go the extra mile. This lesson introduces tools and resources that will help you to be more productive.",
+        items: ["Lazy Git", "Git Aliases", " GitHub Profile"],
+        type: "github"
+    }
+]
 ---
 
 <Layout>
-    <Hero />
-    <Stats />
-    <Git />
-    <GitHub />
-    <Impact />
-    <CTA />
+    <LessonsHero />
+    <Container>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
+            {
+                lessons.map((lesson) => (
+                    <Card
+                        type={lesson.type as "git" | "github"}
+                        icon={lesson.icon}
+                        title={lesson.title}
+                        description={lesson.description}
+                        items={lesson.items}
+                    />
+                ))
+            }
+        </div>
+    </Container>
 </Layout>
