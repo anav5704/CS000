@@ -12,11 +12,37 @@
 
 @layer base {
     * {
-        @apply underline-offset-4;
+        @apply underline-offset-[3px];
+    }
+
+    html,
+    body {
+        @apply scroll-smooth;
+        scroll-padding-top: 90px;
     }
 
     body {
         @apply font-sans bg-white w-screen overflow-x-hidden text-lg;
+    }
+
+    .lesson-content {
+        @apply space-y-5;
+    }
+
+    .lesson-content h1 {
+        @apply text-3xl font-bold;
+    }
+
+    .lesson-content h2 {
+        @apply text-2xl font-bold;
+    }
+
+    .lesson-content .astro-code {
+        @apply rounded-xl p-3;
+    }
+
+    img {
+        @apply rounded-xl;
     }
 
     a {

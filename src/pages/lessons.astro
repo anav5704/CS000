@@ -1,7 +1,9 @@
 ---
+export const prerender = true
+
 import Layout from "../layouts/main.astro"
 import LessonsHero from "../components/Blocks/LessosHero.astro"
-import Card from "../components/Card.astro"
+import LessonCard from "../components/LessonCard.astro"
 import Container from "../components/Container.astro"
 import { User, Users, Zap, Gift } from "@geist-ui/icons"
 
@@ -16,7 +18,8 @@ const lessons = [
             "Make your first Repo",
             "Push code to GitHub"
         ],
-        type: "git"
+        type: "git",
+        url: "/lessons/solo/introduction"
     },
     {
         icon: Users,
@@ -28,7 +31,8 @@ const lessons = [
             "Create Pull Requests",
             "Merge Pull Requests"
         ],
-        type: "github"
+        type: "github",
+        url: "/lessons/team/introduction"
     },
     {
         icon: Zap,
@@ -36,7 +40,8 @@ const lessons = [
         description:
             "Shits about to get real. This lessonon will go over how Git is used in the real world and some best practices to go along with it.",
         items: ["Git Branching", "Git Workflows", "Writing Documentation"],
-        type: "git"
+        type: "git",
+        url: "/lessons/pro/introduction"
     },
     {
         icon: Gift,
@@ -44,7 +49,8 @@ const lessons = [
         description:
             "For those who are willing to go the extra mile. This lesson introduces tools and resources that will help you to be more productive.",
         items: ["Lazy Git", "Git Aliases", " GitHub Profile"],
-        type: "github"
+        type: "github",
+        url: "/lessons/bonus/introduction"
     }
 ]
 ---
@@ -55,12 +61,13 @@ const lessons = [
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
             {
                 lessons.map((lesson) => (
-                    <Card
+                    <LessonCard
                         type={lesson.type as "git" | "github"}
                         icon={lesson.icon}
                         title={lesson.title}
                         description={lesson.description}
                         items={lesson.items}
+                        url={lesson.url}
                     />
                 ))
             }
