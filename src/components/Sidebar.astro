@@ -1,0 +1,59 @@
+---
+import { getCollection } from "astro:content"
+
+interface Props {
+    lesson: "Solo" | "Team" | "Pro" | "Bonus"
+}
+
+const { lesson } = Astro.props
+
+let chapters: {
+    title: string
+    slug: string
+}[] = []
+
+switch (lesson) {
+    case "Solo":
+        const SoloLessons = await getCollection("solo")
+        chapters = SoloLessons.map((lesson) => ({
+            title: lesson.data.title,
+            slug: lesson.slug
+        }))
+        break
+    case "Team":
+        const TeamLessons = await getCollection("team")
+        chapters = TeamLessons.map((lesson) => ({
+            title: lesson.data.title,
+            slug: lesson.slug
+        }))
+        break
+    case "Pro":
+        const ProLessons = await getCollection("pro")
+        chapters = ProLessons.map((lesson) => ({
+            title: lesson.data.title,
+            slug: lesson.slug
+        }))
+
+        break
+    case "Bonus":
+        const BonusLessons = await getCollection("bonus")
+        chapters = BonusLessons.map((lesson) => ({
+            title: lesson.data.title,
+            slug: lesson.slug
+        }))
+        break
+}
+---
+
+<aside class="flex flex-col gap-2 p-5">
+    {chapters.map((chapter) => <a href={chapter.slug}>{chapter.title}</a>)}
+</aside>
+
+<style>
+    aside {
+        @apply w-60;
+    }
+    aside a {
+        @apply no-underline truncate hover:underline;
+    }
+</style>
