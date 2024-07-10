@@ -1,0 +1,24 @@
+---
+interface Props {
+    lesson: string
+    title: string
+}
+
+const { lesson, title } = Astro.props
+---
+
+<nav class="sticky top-0 bg-white flex gap-3 p-5 border-b border-zinc-200">
+    <a href="/">CS000</a>
+    <span>{"/"}</span>
+    <a href="/lessons">Lessons</a>
+    <span>{"/"}</span>
+    <a href={`/lessons/${lesson.toLowerCase()}/introduction`}>{lesson}</a>
+    <span>{"/"}</span>
+    <a href="">{title}</a>
+
+    <style>
+        nav a {
+            @apply no-underline hover:underline;
+        }
+    </style>
+</nav>
