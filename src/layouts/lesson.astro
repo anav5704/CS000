@@ -1,0 +1,42 @@
+---
+import Breadcrumb from "../components/Breadcrumb.astro"
+import Sidebar from "../components/Sidebar.astro"
+import TableOfContentes from "../components/TableOfContentes.astro"
+import "../styles/globals.css"
+
+interface Props {
+    lesson: string
+    title: string
+    headings: {
+        text: string
+        slug: string
+        depth: number
+    }[]
+}
+
+const { lesson, title, headings } = Astro.props
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        <meta property="og:image" content="/og.png" />
+        <meta name="generator" content={Astro.generator} />
+        <title>CS000 - Collaborative Coding with Git and GitHub!</title>
+    </head>
+    <body class="flex flex-col">
+        <Breadcrumb lesson={lesson} title={title} />
+        <main class="flex divide-x divide-zinc-200">
+            <Sidebar lesson="Solo" />
+            <article class="flex-1 lesson-content p-5">
+                <slot />
+            </article>
+            <TableOfContentes headings={headings} />
+        </main>
+    </body>
+</html>
