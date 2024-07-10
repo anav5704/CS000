@@ -1,0 +1,33 @@
+---
+interface Props {
+    headings: {
+        text: string
+        slug: string
+        depth: number
+    }[]
+}
+
+const { headings } = Astro.props
+---
+
+<aside class="flex flex-col gap-2 p-5">
+    {
+        headings.map((heading) => (
+            <a href={`#${heading.slug}`}>
+                {heading.depth === 2 && (
+                    <span class="text-zinc-400">{">"}</span>
+                )}
+                {heading.text}
+            </a>
+        ))
+    }
+</aside>
+
+<style>
+    aside {
+        @apply w-60;
+    }
+    aside a {
+        @apply no-underline truncate hover:underline;
+    }
+</style>
