@@ -1,0 +1,22 @@
+---
+export const prerender = true
+
+import Layout from "../../../layouts/lesson.astro"
+import { getCollection } from "astro:content"
+
+export async function getStaticPaths() {
+    const allProjects = await getCollection("solo")
+
+    return allProjects.map((project) => ({
+        params: { slug: project.slug },
+        props: { project }
+    }))
+}
+
+const { project } = Astro.props
+const { Content, headings } = await project.render()
+---
+
+<Layout lesson="Solo" title={project.data.title} headings={headings}>
+    <Content />
+</Layout>
