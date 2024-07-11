@@ -7,7 +7,7 @@ id: 7
 
 We are now doing to upload the project we made onto GitHub. Head back to repo tab on [GitHub](https://github.com) and create a new repository. You can do this by clicking the green `New` button in the top right corner of the page. Name it `CS000` and add a description.
 
-![Create Repository](./images/create-repository.png)
+![Create Repository](./images/create-repository.webp)
 
 # Repo Visibility
 
@@ -15,7 +15,7 @@ It would be a good idea to make your repository public. This will make it easier
 
 # Upload Project
 
-![Empty Repository](./images/empty-repository.png)
+![Empty Repository](./images/empty-repository.webp)
 
 After creation, you will be taken to the repository page. There are 3 sets of instructions given. We will be using the second set of instructions. Copy all of it and then navigate to your project directory in the terminal.
 
@@ -42,4 +42,4 @@ Whenever you start off a new project, you will need to do this. We will learn ab
 
 Now if you go back to your repository on GitHub, you will be able to see your files there. Congrats on pushing code to your first ever repository!
 
-![Check Repository](./images/check-repository.png)
+![Check Repository](./images/check-repository.webp)

@@ -39,7 +39,7 @@ git status
 
 The output in our case shows that the `sum.cpp` and `sum.exe` files have been modified. The red color on the file names indicates that the changes have not been staged.
 
-![Git Status](./images/git-status.png)
+![Git Status](./images/git-status.webp)
 
 # Git Add
 
@@ -57,7 +57,7 @@ git status
 
 This time, the `sum.cpp` and `sum.exe` files are staged. The red color on the file names has been removed.
 
-![Git Add](./images/git-add.png)
+![Git Add](./images/git-add.webp)
 
 At this point, we have made changes to our code and added them to the staging area. But what is the staging area? It is a place where we can store changes before committing them to the repository. Similar to how passengers wait in a train station for the train to arrive.
 
@@ -77,7 +77,7 @@ git status
 
 The `sum.cpp` and `sum.exe` files have been committed, that's why they are not being shown as before.
 
-![Git Commit](./images/git-commit.png)
+![Git Commit](./images/git-commit.webp)
 
 So right now, we have saved our changes to the local repository. We essentially created a checkpoint for our code. If we continue to work and make a mistake, we can always go back to this commit and continue from there.
 
@@ -91,7 +91,7 @@ git push
 
 If we go back to GitHub, and click on he `sum.cpp` file. You can see that our changes have been pushed. I just realized that naming the program `sum.cpp` and calculating the difference too inside is stupid.
 
-![Git Push](./images/git-push.png)
+![Git Push](./images/git-push.webp)
 
 # Ignore Files
 

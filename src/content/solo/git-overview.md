@@ -27,7 +27,7 @@ git --version
 
 This will tell you the version of Git that you have installed on your computer.
 
-![Git Version](./images/git-version.png)
+![Git Version](./images/git-version.webp)
 
 Git has a ton of commands. We will go over the important ones after setting up GitHub and writing some code.
 

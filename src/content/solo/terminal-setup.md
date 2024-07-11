@@ -47,7 +47,7 @@ The starting directory is the directory that the terminal loads up when you open
 
 To keep things organized, let's make a `code` directory. You can place this directory anywhere on your computer. Mine is locateda at `C:/Users/anav/code`. This is what it loks like:
 
-![Starting Directory](./images/staring-directory.png)
+![Starting Directory](./images/staring-directory.webp)
 
 ## Configure Terminal
 
@@ -56,7 +56,7 @@ Now that we have our directory, let's configure the terminal to open in this dir
 -   **Windows** - `Settings > Profiles > Starting Directory`.
 -   **macOS** `Preferences > General > Working Directory`.
 
-![Terminal Settings](./images/confiture-terminal.png)
+![Terminal Settings](./images/confiture-terminal.webp)
 
 Every time you open the terminal, it will already be in the directory we chose.
 
@@ -90,4 +90,4 @@ cd CS111-Projects
 
 All of this combined should look something like this:
 
-![Terminal Navigation](./images/terminal-navigation.png)
+![Terminal Navigation](./images/terminal-navigation.webp)
