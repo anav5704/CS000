@@ -29,11 +29,11 @@ const { lesson, title, headings } = Astro.props
         <meta name="generator" content={Astro.generator} />
         <title>CS000 - Collaborative Coding with Git and GitHub!</title>
     </head>
-    <body class="flex flex-col">
+    <body class="flex flex-col min-h-screen">
         <Breadcrumb lesson={lesson} title={title} />
-        <main class="flex divide-x divide-zinc-200">
+        <main class="flex divide-x divide-zinc-200 grow">
             <Sidebar lesson="Solo" />
-            <article class="flex-1 lesson-content p-5">
+            <article class="flex-1 lesson-content p-5 pb-[50vh]">
                 <slot />
             </article>
             <TableOfContentes headings={headings} />

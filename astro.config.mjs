@@ -10,6 +10,11 @@ export default defineConfig({
     site: "https://cs000.anav.dev",
     output: "server",
     adapter: vercel(),
+    markdown: {
+        shikiConfig: {
+            theme: "github-dark-dimmed",
+        }
+    },
     devToolbar: {
         enabled: false
     },

@@ -26,17 +26,32 @@
     }
 
     .lesson-content {
-        @apply space-y-5;
+        @apply space-y-3;
 
         h1 {
-            @apply text-3xl font-bold;
+            @apply text-3xl font-bold pt-6 first-of-type:pt-0;
         }
 
         h2 {
-            @apply text-2xl font-bold;
+            @apply text-2xl font-bold pt-6;
         }
+
+        li {
+            @apply list-disc ml-5;
+        }
+
         .astro-code {
             @apply rounded-xl p-3;
+        }
+
+        code {
+            @apply bg-zinc-200 px-2 rounded-md text-base;
+        }
+
+        pre {
+            code {
+                @apply [all:unset];
+            }
         }
     }
 

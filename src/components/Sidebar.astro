@@ -10,6 +10,7 @@ const { lesson } = Astro.props
 let chapters: {
     title: string
     slug: string
+    id: number
 }[] = []
 
 switch (lesson) {
@@ -17,21 +18,24 @@ switch (lesson) {
         const SoloLessons = await getCollection("solo")
         chapters = SoloLessons.map((lesson) => ({
             title: lesson.data.title,
-            slug: lesson.slug
+            slug: lesson.slug,
+            id: lesson.data.id
         }))
         break
     case "Team":
         const TeamLessons = await getCollection("team")
         chapters = TeamLessons.map((lesson) => ({
             title: lesson.data.title,
-            slug: lesson.slug
+            slug: lesson.slug,
+            id: lesson.data.id
         }))
         break
     case "Pro":
         const ProLessons = await getCollection("pro")
         chapters = ProLessons.map((lesson) => ({
             title: lesson.data.title,
-            slug: lesson.slug
+            slug: lesson.slug,
+            id: lesson.data.id
         }))
 
         break
@@ -39,10 +43,13 @@ switch (lesson) {
         const BonusLessons = await getCollection("bonus")
         chapters = BonusLessons.map((lesson) => ({
             title: lesson.data.title,
-            slug: lesson.slug
+            slug: lesson.slug,
+            id: lesson.data.id
         }))
         break
 }
+
+chapters.sort((a, b) => a.id - b.id)
 ---
 
 <aside class="flex flex-col gap-2 p-5">
