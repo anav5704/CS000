@@ -22,6 +22,8 @@ int main() {
     int sum = a + b;
 
     cout << "The sum is: " << sum << endl;
+
+    return 0;
 }
 ```
 
@@ -37,7 +39,7 @@ After compiling, you will notice that a new `.exe` file was created. This is the
 
 ```ts
 code
-├── CS000
-│   ├── sum.cpp
-│   └── sum.exe
+└── CS000
+    ├── sum.cpp
+    └── sum.exe
 ```

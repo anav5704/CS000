@@ -23,3 +23,4 @@ By the end of this lesson, you will be able to:
 -   Use basic Git commands
 -   Create repos on GitHub
 -   Push your code to GitHub
+-   Restore code to previous versions

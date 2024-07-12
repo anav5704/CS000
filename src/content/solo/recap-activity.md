@@ -16,7 +16,7 @@ You probably have a few projects lying around from previous semesters. I want yo
 code
 ├── CS000
 │   ├── math.cpp
-│   ├── math.cpp
+│   ├── math.exe
 │   └── .gitignore
 ├── CS111
 │   ├── project1.cpp
