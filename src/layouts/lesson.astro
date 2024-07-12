@@ -5,7 +5,7 @@ import TableOfContentes from "../components/TableOfContentes.astro"
 import "../styles/globals.css"
 
 interface Props {
-    lesson: string
+    lesson: "Solo" | "Team" | "Pro" | "Bonus"
     title: string
     headings: {
         text: string
@@ -32,7 +32,7 @@ const { lesson, title, headings } = Astro.props
     <body class="flex flex-col min-h-screen">
         <Breadcrumb lesson={lesson} title={title} />
         <main class="flex divide-x divide-zinc-200 grow">
-            <Sidebar lesson="Solo" />
+            <Sidebar lesson={lesson} />
             <article class="flex-1 lesson-content p-5 pb-[50vh]">
                 <slot />
             </article>
