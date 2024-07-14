@@ -45,6 +45,6 @@ There is a decent bit of things to learn and not many people will want to use it
 -   [LazyGit Docs](https://github.com/jesseduffield/lazygit)
 -   [LazyGit Video](https://www.youtube.com/watch?v=PBOLSJCu024)
 
-# LazGit Global Alias
+# LazyGit Global Alias
 
 Just as we set a global alias for `git`, we can set a global alias for `lazygit`. Do this yourself. If you are stuck then you can refer to the chapter wehre we get a global alias for `git`. Since our alias for `git` was `g`, we can use `l` for `lazygit`.
