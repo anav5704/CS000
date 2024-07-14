@@ -1,11 +1,10 @@
 ---
-import type { Icon } from "@geist-ui/icons"
-import { Check } from "@geist-ui/icons"
+import { type LucideIcon, Check } from "lucide-react"
 
 interface Props {
     title: string
     description: string
-    icon: Icon
+    icon: LucideIcon
     items: string[]
     url: string
     type: "git" | "github"
@@ -34,7 +33,7 @@ switch (type) {
         " no-underline flex flex-col justify-end col-span-1  rounded-3xl p-5 gap-3"}
 >
     <div class={background + " rounded-2xl w-fit p-5 text-white"}>
-        {(<Icon size={25} />)}
+        {(<Icon size={25} strokeWidth={2} />)}
     </div>
     <h4 class="font-bold text-2xl">{title}</h4>
     {description}
@@ -43,7 +42,7 @@ switch (type) {
         {
             items.map((item) => (
                 <li class="flex items-center gap-2">
-                    <Check size={28} />
+                    <Check size={25} strokeWidth={2} />
                     {item}
                 </li>
             ))
