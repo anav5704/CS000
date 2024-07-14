@@ -122,11 +122,13 @@ Markdown has many more powerful features, if you are interested in learning more
 
 # Adding Docs
 
-Now that you know how to write Markdown, you can start adding docs to your repos. You will need to create a `README.md` file in the root of your repo.
+Now that you know how to write Markdown, you can start adding docs to your repos. You will need to create a `README.md` file in the root of your repo. You can have a `docs` directory as well to store images you want to reference in your README.
 
 ```bash
 code
 └── CS000
+    ├── docs
+    │   └── image.webp
     ├── README.md
     ├── sum.cpp
     └── sum.exe
