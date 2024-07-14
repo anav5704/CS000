@@ -135,11 +135,3 @@ code
 The `README.md` file is the file that will be displayed on the GitHub page of your repo. Add your docs and then push the changes to GitHub. You can find the docs under the list of files in your GitHub repo. Here is what it would look like once you push your changes:
 
 ![README Example](./images/readme-example.webp)
-
-# SEO Hacks
-
-Writing high quality docs is important. It can help your repo show up on Google search results. But to have a better change of showing on the search results, I have a little hack for you. This is to carefully name your repo `Title` nd have an extremely relevant `Description`.
-
-![Google Search Example](./images/google-search-example.webp)
-
-Here you can see I have searched for `Batman Discord Bot`. I have scrolled a bit, so the 3rd result is my repo from GitHub and the 4rd is from my [personal website](https://www.anav.dev). I had to work hard to get my own website to show up in the search results. But to get GitHub to show up is as easy as filling the `Title` and `Description` fields.
