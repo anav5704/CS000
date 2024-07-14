@@ -10,40 +10,40 @@ import { User, Users, Zap, Gift } from "@geist-ui/icons"
 const lessons = [
     {
         icon: User,
-        title: "Lesson 1: Solo",
+        title: "Solo Lesson",
         description:
             "This lesson will introduce you to the basics of Git and GitHub. It will prepare you to use these tools for indiviaual assignements and persoonal prjects.",
         items: [
-            "Navigating the Terminal",
             "Setup Git and GitHub",
             "Make your first Repo",
-            "Push code to GitHub",
-            "Time Traveling"
+            "Push code to GitHub"
         ],
         type: "git",
         url: "/lessons/solo/introduction"
     },
     {
         icon: Users,
-        title: "Lesson 2: Team",
+        title: "Team Lesson",
         description:
             "You're gonna need a friend for this one. This losson will go over how multiple people can work on the same project at the same time.",
         items: [
-            "Conventional Commits",
             "Fork and Clone Repos",
-            "Create Pull Requests",
-            "Merge Pull Requests",
-            "Resolve Conflicts"
+            "Create and Merge PRs",
+            "Resolve Merge Conflicts"
         ],
         type: "github",
         url: "/lessons/team/introduction"
     },
     {
         icon: Zap,
-        title: "Lesson 3: Pro",
+        title: "Pro Lesson",
         description:
             "Shits about to get real. This lessonon will go over how Git is used in the real world and some best practices to go along with it.",
-        items: ["Git Branching", "Git Workflows", "Writing Documentation"],
+        items: [
+            "Use and manage Branches",
+            " Sync code on Branches",
+            "Implement GitHub Flow"
+        ],
         type: "git",
         url: "/lessons/pro/introduction"
     },
@@ -52,7 +52,11 @@ const lessons = [
         title: "Bonus Lesson",
         description:
             "For those who are willing to go the extra mile. This lesson introduces tools and resources that will help you to be more productive.",
-        items: ["Lazy Git", "Git Aliases", " GitHub Profile"],
+        items: [
+            "LazyGit and Git Aliases",
+            "Setup GitHub README",
+            "Write Docs using Markdown"
+        ],
         type: "github",
         url: "/lessons/bonus/introduction"
     }
