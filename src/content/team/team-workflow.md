@@ -22,11 +22,3 @@ If you decide to be the owner, your main role will be to `merge` the `pull reque
 These are the people that will `fork` and `clone` the assignment repo. They will get their own copy of the main assignment code that is still linked to the original repo.
 
 If you decide to be a contributor, your main role will be to `sync` your forked repo with the original repo. Along with this, you will need to `pull` the latest code from the original repo. After adding features, you will have to create a `pull request` to add your code to the main repo.
-
-# Merge Conflicts
-
-`Merge conflicts` are when two people change the same line of code. Git won't know which version of the code to keep. Dealing with `merge conflicts` is a pain in the ass. Do whatever you can to avoid them.
-
-Plan and assign features amongst your group members before starting. If everyone has specific things to work on, it is less likely that `merge conflicts` will occur.
-
-`Sync`, `Pull`, and `Merge` at regular intervals (daily). If everyone is working on the updated verson of the code, it is less likely that `merge conflicts` will occur.

@@ -79,7 +79,7 @@ The third part is what the other developer did.
 
 # Resolving Conflicts
 
-In order to resolve the conflict, you have to delete 2 things: delete the code you do not want to keep and the guides that Git put around the code. The guides I'm referring to are thiese:
+In order to resolve the conflict, you have to delete 2 things: delete the code you do not want to keep and the guides that Git put around the code. The guides I'm referring to are these:
 
 ```cpp
 <<<<<<< HEAD (Current Change)
