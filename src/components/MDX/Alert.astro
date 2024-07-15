@@ -1,0 +1,45 @@
+---
+import {
+    Info,
+    AlertTriangle,
+    Lightbulb,
+    Trophy,
+    type LucideIcon
+} from "lucide-react"
+
+interface Props {
+    type: "info" | "warning" | "tip" | "reward"
+}
+
+const { type } = Astro.props
+
+let AlertIcon: LucideIcon
+let color: string
+
+switch (type) {
+    case "info":
+        AlertIcon = Info
+        color = "bg-sky-100 border-sky-500"
+        break
+    case "warning":
+        AlertIcon = AlertTriangle
+        color = "bg-red-100 border-red-500"
+        break
+    case "tip":
+        AlertIcon = Lightbulb
+        color = "bg-emerald-100 border-emerald-500"
+        break
+    case "reward":
+        AlertIcon = Trophy
+        color = "bg-purple-100 border-purple-500"
+        break
+}
+---
+
+<div
+    role="alert"
+    class={`${color} border p-3 rounded-xl flex gap-3 items-start`}
+>
+    <AlertIcon size={20} className="min-h-5 min-w-5 mt-1" strokeWidth={2} />
+    <slot />
+</div>
