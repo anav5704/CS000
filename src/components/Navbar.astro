@@ -1,25 +1,41 @@
+---
+const links = [
+    { href: "/lessons", label: "Lessons" },
+    { href: "/pricing", label: "Pricing" },
+    { href: "/about", label: "About" }
+]
+
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname.slice(1)
+---
+
 <div
     class="border-b broder-zinc-3200 p-5 md:px-0 z-10 backdrop-blur-xl bg-white/50 fixed top-0 w-screen flex items-center justify-center"
 >
     <nav
-        class="[&>div>a]:no-underline w-full md:w-4/5 lg:w-3/4 mx-auto flex items-center justify-between"
+        class="[&>div>a]:no-underline [&>div>a:hover]:underline [&>div>a:hover]:text-black w-full md:w-4/5 lg:w-3/4 mx-auto flex items-center justify-between"
     >
         <div>
             <a class="!text-black" href="/">CS000</a>
         </div>
         <div class="hidden md:block space-x-10">
-            <a href="/lessons">Lessons</a>
-            <a href="/pricing">Pricing</a>
-            <a href="/about">About</a>
+            {
+                links.map((link) => (
+                    <a
+                        href={link.href}
+                        class={
+                            currentPath.includes(link.label.toLowerCase())
+                                ? "text-black"
+                                : "text-zinc-500"
+                        }
+                    >
+                        {link.label}
+                    </a>
+                ))
+            }
         </div>
         <div>
             <a href="/">Get Started</a>
         </div>
     </nav>
-
-    <style>
-        a {
-            @apply text-zinc-500 hover:text-black transition;
-        }
-    </style>
 </div>

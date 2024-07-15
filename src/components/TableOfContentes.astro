@@ -15,7 +15,7 @@ const { headings } = Astro.props
         headings.map((heading) => (
             <a href={`#${heading.slug}`}>
                 {heading.depth === 2 && (
-                    <span class="text-zinc-400">{">"}</span>
+                    <span class="text-zinc-400">{"-"}</span>
                 )}
                 {heading.text}
             </a>

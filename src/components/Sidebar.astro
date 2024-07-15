@@ -50,10 +50,26 @@ switch (lesson) {
 }
 
 chapters.sort((a, b) => a.id - b.id)
+
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname.slice(1)
 ---
 
 <aside class="flex flex-col gap-2 p-5">
-    {chapters.map((chapter) => <a href={chapter.slug}>{chapter.title}</a>)}
+    {
+        chapters.map((chapter) => (
+            <a
+                href={chapter.slug}
+                class={
+                    currentPath.includes(chapter.slug)
+                        ? "text-black"
+                        : "text-zinc-500"
+                }
+            >
+                {chapter.title}
+            </a>
+        ))
+    }
 </aside>
 
 <style>
@@ -61,6 +77,6 @@ chapters.sort((a, b) => a.id - b.id)
         @apply w-60;
     }
     aside a {
-        @apply no-underline truncate hover:underline;
+        @apply no-underline truncate hover:underline hover:text-black;
     }
 </style>
