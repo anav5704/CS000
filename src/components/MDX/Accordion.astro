@@ -1,0 +1,43 @@
+---
+import { CircleHelp, CircleCheck } from "lucide-react"
+
+interface Props {
+    question: string
+    answer: string
+}
+
+const { question, answer } = Astro.props
+---
+
+<div class="rounded-xl bg-pink-100 border border-pink-500">
+    <details>
+        <summary class="cursor-pointer outline-none">
+            <div class="flex items-start p-3 gap-3">
+                <CircleHelp
+                    size={20}
+                    className="min-h-5 min-w-5 mt-1"
+                    strokeWidth={2}
+                />
+                <p>{question}</p>
+            </div>
+        </summary>
+        <hr class="border-pink-500" />
+        <div class="flex items-start gap-3 p-3">
+            <CircleCheck
+                size={20}
+                className="min-h-5 min-w-5 mt-1"
+                strokeWidth={2}
+            />
+            <p>{answer}</p>
+        </div>
+    </details>
+
+    <style>
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</div>
