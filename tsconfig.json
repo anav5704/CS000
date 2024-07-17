@@ -7,8 +7,8 @@
         "strictNullChecks": true,
         "jsxImportSource": "react",
         "paths": {
-            "@components/*": [
-                "./src/components/*"
+            "@*": [
+                "./src/*"
             ]
         }
     }

@@ -9,6 +9,9 @@
         "preview": "astro preview",
         "astro": "astro"
     },
+    "prisma": {
+        "schema": "src/prisma/schema.prisma"
+    },
     "dependencies": {
         "@astrojs/check": "^0.7.0",
         "@astrojs/mdx": "^3.1.2",
@@ -16,10 +19,16 @@
         "@astrojs/sitemap": "^3.1.6",
         "@astrojs/tailwind": "^5.1.0",
         "@astrojs/vercel": "^7.7.2",
+        "@auth/core": "^0.32.0",
+        "@nanostores/react": "^0.7.2",
+        "@prisma/client": "^5.17.0",
         "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
         "astro": "^4.11.3",
+        "auth-astro": "^4.1.2",
         "lucide-react": "^0.408.0",
+        "nanostores": "^0.10.3",
+        "prisma": "^5.17.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "tailwindcss": "^3.4.4",
