@@ -97,6 +97,26 @@
         }
     }
 
+    .btn-sm {
+        @apply px-4 py-1 text-base rounded-xl cursor-pointer no-underline;
+    }
+
+    .btn-md {
+        @apply px-5 py-2 text-lg rounded-xl cursor-pointer no-underline;
+    }
+
+    .btn-lg {
+        @apply px-6 py-3 text-xl rounded-xl cursor-pointer no-underline;
+    }
+
+    .btn-git {
+        @apply bg-git-gradient text-white shadow-2xl shadow-rose-500;
+    }
+
+    .btn-github {
+        @apply bg-github-gradient text-white shadow-2xl shadow-purple-500;
+    }
+
     .text-git-gradient {
         @apply bg-gradient-to-br from-red-500 to-pink-500 bg-clip-text text-transparent;
     }
