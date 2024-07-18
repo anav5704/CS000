@@ -19,6 +19,18 @@ const { lesson, title, headings } = Astro.props
 
 <html lang="en">
     <head>
+        <link
+            rel="preload"
+            href="/fonts/dm-sans.ttf"
+            crossorigin="anonymous"
+            type="font/ttf"
+            as="font"
+        />
+        <style>
+            @view-transition {
+                navigation: auto;
+            }
+        </style>
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -33,7 +45,9 @@ const { lesson, title, headings } = Astro.props
         <Breadcrumb lesson={lesson} title={title} />
         <main class="flex divide-x divide-zinc-200 grow">
             <Sidebar lesson={lesson} />
-            <article class="flex-1 lesson-content p-5 pb-[50vh]">
+            <article
+                class="h-[calc(100vh-64px)] scroll-smooth overflow-scroll no-scrollbar flex-1 lesson-content p-5 pb-[50vh]"
+            >
                 <slot />
             </article>
             <TableOfContentes headings={headings} />

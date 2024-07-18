@@ -1,12 +1,24 @@
 ---
+import ModalProvider from "@providers/ModalProvider.astro"
 import Navbar from "../components/Navbar.astro"
 import Footer from "../components/Footer.astro"
-import SignInModal from "@components/SignInModal"
 import "../styles/globals.css"
 ---
 
 <html lang="en">
     <head>
+        <link
+            rel="preload"
+            href="/fonts/dm-sans.ttf"
+            crossorigin="anonymous"
+            type="font/ttf"
+            as="font"
+        />
+        <style>
+            @view-transition {
+                navigation: auto;
+            }
+        </style>
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -19,7 +31,7 @@ import "../styles/globals.css"
     </head>
     <body class="pt-[10vh] flex flex-col min-h-screen space-y-20 md:space-y-24">
         <Navbar />
-        <SignInModal client:load />
+        <ModalProvider />
         <slot />
         <Footer />
     </body>
