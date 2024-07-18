@@ -11,18 +11,18 @@
 }
 
 @layer base {
-    * {
-        @apply underline-offset-[3px];
-    }
-
     html,
     body {
-        @apply scroll-smooth;
-        scroll-padding-top: 90px;
+        @apply scroll-smooth underline-offset-[3px];
+        scroll-padding-top: 50px;
     }
 
     body {
-        @apply font-sans bg-white w-screen overflow-x-hidden text-lg;
+        @apply font-sans bg-white w-screen overflow-x-hidden;
+    }
+
+    main {
+        @apply text-lg;
     }
 
     .lesson-content {
@@ -45,7 +45,7 @@
         }
 
         code {
-            @apply bg-zinc-200 px-2 rounded-md text-base;
+            @apply bg-zinc-200 px-2 rounded-md;
         }
 
         pre {
@@ -70,7 +70,7 @@
 
 @layer components {
     .content {
-        @apply space-y-2 md:space-y-5;
+        @apply space-y-3 md:space-y-7;
     }
 
     .legal {
