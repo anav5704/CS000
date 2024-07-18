@@ -7,7 +7,9 @@
         "start": "astro dev",
         "build": "astro check && astro build",
         "preview": "astro preview",
-        "astro": "astro"
+        "astro": "astro",
+        "db:new": "npx prisma format && npx prisma generate && npx prisma db push",
+        "postinstall": "prisma generate"
     },
     "prisma": {
         "schema": "src/prisma/schema.prisma"
