@@ -1,0 +1,11 @@
+---
+import { AccountModal } from "@components/AccountModal"
+import { AuthModal } from "@components/AuthModal"
+
+import { getSession } from "auth-astro/server"
+
+const session = await getSession(Astro.request)
+---
+
+<AccountModal user={session?.user} client:load />
+<AuthModal client:load />
