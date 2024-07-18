@@ -1,6 +1,9 @@
 ---
-import Button from "../Button.astro"
+import { getSession } from "auth-astro/server"
+import { GetStarted } from "@components/GetStarted"
 import Description from "../Description.astro"
+
+const session = await getSession(Astro.request)
 ---
 
 <section
@@ -18,5 +21,15 @@ import Description from "../Description.astro"
         <br />
         Don't be the guy that emails code back and forth 😐
     </Description>
-    <Button size="lg" variant="github">Get Started - It's Free</Button>
+    <div>
+        {
+            session ? (
+                <a href="/lessons" class="btn-lg btn-github">
+                    Go To Lessons
+                </a>
+            ) : (
+                <GetStarted className="btn-lg btn-github" client:load />
+            )
+        }
+    </div>
 </section>

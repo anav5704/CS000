@@ -1,6 +1,9 @@
 ---
+import { getSession } from "auth-astro/server"
+import { GetStarted } from "@components/GetStarted"
 import Container from "../Container.astro"
-import Button from "../Button.astro"
+
+const session = await getSession(Astro.request)
 ---
 
 <Container>
@@ -14,6 +17,16 @@ import Button from "../Button.astro"
             <br />
             <span class="text-git-gradient">Zero</span> Reasons To Not Start.
         </h1>
-        <Button size="lg" variant="git">Get Started - It's Free</Button>
+        <div>
+            {
+                session ? (
+                    <a href="/lessons" class="btn-lg btn-git">
+                        Go To Lessons
+                    </a>
+                ) : (
+                    <GetStarted className="btn-lg btn-git" client:load />
+                )
+            }
+        </div>
     </section>
 </Container>
