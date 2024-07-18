@@ -1,16 +1,21 @@
 ---
+import { getSession } from "auth-astro/server"
+
 const links = [
     { href: "/lessons", label: "Lessons" },
-    { href: "/pricing", label: "Pricing" },
-    { href: "/about", label: "About" }
+    { href: "/support", label: "Support" },
+    { href: "/about", label: "About" },
+    { href: "/faq", label: "FAQ" }
 ]
 
 const pathname = new URL(Astro.request.url).pathname
 const currentPath = pathname.slice(1)
+
+const session = await getSession(Astro.request)
 ---
 
 <div
-    class="border-b broder-zinc-3200 p-5 md:px-0 z-10 backdrop-blur-xl bg-white/50 fixed top-0 w-screen flex items-center justify-center"
+    class="border-b broder-zinc-3200 h-14 z-10 backdrop-blur-xl bg-white/50 fixed top-0 w-screen flex items-center justify-center"
 >
     <nav
         class="[&>div>a]:no-underline [&>div>a:hover]:underline [&>div>a:hover]:text-black w-full md:w-4/5 lg:w-3/4 mx-auto flex items-center justify-between"
@@ -35,7 +40,18 @@ const currentPath = pathname.slice(1)
             }
         </div>
         <div>
-            <a href="/">Get Started</a>
+            {
+                session ? (
+                    <p id="logout">Log Out</p>
+                ) : (
+                    <a href="/login">Get Started</a>
+                )
+            }
         </div>
     </nav>
 </div>
+
+<script>
+    const { signOut } = await import("auth-astro/client")
+    document.querySelector("#logout").onclick = () => signOut()
+</script>

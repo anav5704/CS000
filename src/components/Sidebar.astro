@@ -56,14 +56,15 @@ const currentPath = pathname.slice(1)
 ---
 
 <aside class="flex flex-col gap-2 p-5">
+    <h2 class="text-zinc-500 text-sm uppercase">lesson chapters</h2>
     {
         chapters.map((chapter) => (
             <a
                 href={chapter.slug}
                 class={
                     currentPath.includes(chapter.slug)
-                        ? "text-black"
-                        : "text-zinc-500"
+                        ? "underline"
+                        : "no-underline"
                 }
             >
                 {chapter.title}
@@ -77,6 +78,6 @@ const currentPath = pathname.slice(1)
         @apply w-60;
     }
     aside a {
-        @apply no-underline truncate hover:underline hover:text-black;
+        @apply truncate hover:underline hover:text-black;
     }
 </style>
