@@ -1,5 +1,6 @@
 ---
 import { getSession } from "auth-astro/server"
+import { UserMenu } from "@components/UserMenu"
 
 const links = [
     { href: "/lessons", label: "Lessons" },
@@ -40,18 +41,7 @@ const session = await getSession(Astro.request)
             }
         </div>
         <div>
-            {
-                session ? (
-                    <p id="logout">Log Out</p>
-                ) : (
-                    <a href="/login">Get Started</a>
-                )
-            }
+            <UserMenu user={session?.user} client:load />
         </div>
     </nav>
 </div>
-
-<script>
-    const { signOut } = await import("auth-astro/client")
-    document.querySelector("#logout").onclick = () => signOut()
-</script>
