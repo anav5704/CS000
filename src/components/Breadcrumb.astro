@@ -1,26 +1,42 @@
 ---
+import { UserMenu } from "./UserMenu"
+import { db } from "@prisma"
+
 interface Props {
     lesson: string
     title: string
 }
 
 const { lesson, title } = Astro.props
+const { user } = Astro.locals
+
+const userPorgress = await db.user.findFirst({
+    where: {
+        email: user?.email
+    },
+    include: {
+        progress: true
+    }
+})
 ---
 
 <nav
-    class="sticky top-0 bg-white flex gap-3 h-16 border-b items-center px-5 border-zinc-200"
+    class="sticky top-0 bg-white flex gap-3 h-16 border-b items-center justify-between px-5 border-zinc-200"
 >
-    <a href="/">CS000</a>
-    <span>{"/"}</span>
-    <a href="/lessons">Lessons</a>
-    <span>{"/"}</span>
-    <a href={`/lessons/${lesson.toLowerCase()}/introduction`}>{lesson}</a>
-    <span>{"/"}</span>
-    <a href="">{title}</a>
-
-    <style>
-        nav a {
-            @apply no-underline hover:underline;
-        }
-    </style>
+    <div class="space-x-3">
+        <a href="/">CS000</a>
+        <span>{"/"}</span>
+        <a href="/lessons">Lessons</a>
+        <span>{"/"}</span>
+        <a href={`/lessons/${lesson.toLowerCase()}/introduction`}>{lesson}</a>
+        <span>{"/"}</span>
+        <a href="">{title}</a>
+    </div>
+    <UserMenu user={userPorgress} client:load />
 </nav>
+
+<style>
+    nav a {
+        @apply no-underline hover:underline;
+    }
+</style>
