@@ -1,20 +1,7 @@
 ---
 import { AccountModal } from "@components/AccountModal"
 import { AuthModal } from "@components/AuthModal"
-import type { UserProgress } from "@types"
-import { db } from "@prisma"
-
-const { user } = Astro.locals
-
-const userPorgress = await db.user.findFirst({
-    where: {
-        email: user?.email
-    },
-    include: {
-        progress: true
-    }
-})
 ---
 
-<AccountModal user={userPorgress} client:load />
+<AccountModal client:load />
 <AuthModal client:load />

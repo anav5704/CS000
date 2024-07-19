@@ -4,7 +4,6 @@ import { ProgressToggle } from "@components/ProgressToggle"
 import ModalProvider from "@providers/ModalProvider.astro"
 import Breadcrumb from "../components/Breadcrumb.astro"
 import Sidebar from "@components/Sidebar.astro"
-import { getSession } from "auth-astro/server"
 import "../styles/globals.css"
 import { db } from "@prisma"
 
@@ -29,23 +28,6 @@ const progress = await db.progress.findFirst({
         }
     }
 })
-
-let defaultChecked
-
-switch (lesson) {
-    case "Solo":
-        defaultChecked = progress?.soloCompleted.includes(chapterId) || false
-        break
-    case "Team":
-        defaultChecked = progress?.teamCompleted.includes(chapterId) || false
-        break
-    case "Pro":
-        defaultChecked = progress?.proCompleted.includes(chapterId) || false
-        break
-    case "Bonus":
-        defaultChecked = progress?.bonusCompleted.includes(chapterId) || false
-        break
-}
 ---
 
 <html lang="en">
@@ -82,7 +64,6 @@ switch (lesson) {
             >
                 <slot />
                 <ProgressToggle
-                    defaultChecked={defaultChecked}
                     chapterId={chapterId}
                     lesson={lesson}
                     client:load

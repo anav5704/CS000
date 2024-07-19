@@ -5,7 +5,7 @@ import type { UserProgress } from "@types"
 import { useEffect } from "react"
 
 interface Props {
-    user?: UserProgress
+    user?: UserProgress | null
 }
 
 export const UserMenu = ({ user }: Props) => {

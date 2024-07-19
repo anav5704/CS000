@@ -5,18 +5,13 @@ import { useStore } from '@nanostores/react'
 import { getCollection } from "astro:content"
 import { signOut } from "auth-astro/client"
 import { Modal } from "@components/Modal"
-import type { UserProgress } from "@types"
 
 const soloChapters = await getCollection("solo")
 const teamChapters = await getCollection("team")
 const proChapters = await getCollection("pro")
 const bonusChapters = await getCollection("bonus")
 
-interface Props {
-    user: UserProgress
-}
-
-export const AccountModal = ({ user }: Props) => {
+export const AccountModal = () => {
     const $progress = useStore(progress)
     const $isOpen = useStore(isOpen)
     const $type = useStore(type)
