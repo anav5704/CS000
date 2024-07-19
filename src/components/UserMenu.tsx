@@ -1,12 +1,25 @@
 import { isOpen, type } from "@context/ModalStore"
+import { progress } from "@context/ProgressStore"
 import { useStore } from "@nanostores/react"
-import type { User } from "@auth/core/types"
+import type { UserProgress } from "@types"
+import { useEffect } from "react"
 
 interface Props {
-    user?: User
+    user?: UserProgress
 }
 
 export const UserMenu = ({ user }: Props) => {
+    useEffect(() => {
+        if (user) {
+            progress.set({
+                soloCompleted: user?.progress?.soloCompleted ?? [],
+                teamCompleted: user?.progress?.teamCompleted ?? [],
+                proCompleted: user?.progress?.proCompleted ?? [],
+                bonusCompleted: user?.progress?.bonusCompleted ?? [],
+            })
+        }
+    }, [progress.get().bonusCompleted, progress.get().proCompleted, progress.get().teamCompleted, progress.get().soloCompleted])
+
     const $isOpen = useStore(isOpen)
 
     const handleOpenAccountModal = () => {
