@@ -5,18 +5,23 @@ import Layout from "../../../layouts/lesson.astro"
 import { getCollection } from "astro:content"
 
 export async function getStaticPaths() {
-    const bonusLessons = await getCollection("bonus")
+    const bonusChapters = await getCollection("bonus")
 
-    return bonusLessons.map((lesson) => ({
-        params: { slug: lesson.slug },
-        props: { lesson }
+    return bonusChapters.map((chpater) => ({
+        params: { slug: chpater.slug },
+        props: { chpater }
     }))
 }
 
-const { lesson } = Astro.props
-const { Content, headings } = await lesson.render()
+const { chpater } = Astro.props
+const { Content, headings } = await chpater.render()
 ---
 
-<Layout lesson="Bonus" title={lesson.data.title} headings={headings}>
+<Layout
+    lesson="Bonus"
+    chapterId={chpater.data.id}
+    title={chpater.data.title}
+    headings={headings}
+>
     <Content />
 </Layout>
