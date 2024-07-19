@@ -11,11 +11,12 @@ const { headings } = Astro.props
 ---
 
 <aside class="flex flex-col gap-2 p-5">
+    <h2 class="text-zinc-500 text-sm uppercase">on this page</h2>
     {
         headings.map((heading) => (
             <a href={`#${heading.slug}`}>
                 {heading.depth === 2 && (
-                    <span class="text-zinc-400">{"-"}</span>
+                    <span class="text-zinc-400">{" - "}</span>
                 )}
                 {heading.text}
             </a>

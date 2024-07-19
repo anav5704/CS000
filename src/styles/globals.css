@@ -11,10 +11,19 @@
 }
 
 @layer base {
+    ::-webkit-scrollbar {
+        display: none !important; /* Chrome */
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none !important; /* Edge */
+        scrollbar-width: none !important; /* Firefox */
+    }
+
     html,
     body {
         @apply scroll-smooth underline-offset-[3px];
-        scroll-padding-top: 50px;
+        scroll-padding-top: 64px;
     }
 
     body {
@@ -45,7 +54,7 @@
         }
 
         code {
-            @apply bg-zinc-200 px-2 rounded-md;
+            @apply bg-zinc-200 px-2 rounded-md text-base;
         }
 
         pre {

@@ -1,11 +1,16 @@
 ---
-import Breadcrumb from "../components/Breadcrumb.astro"
-import Sidebar from "../components/Sidebar.astro"
 import TableOfContentes from "../components/TableOfContentes.astro"
+import { ProgressToggle } from "@components/ProgressToggle"
+import ModalProvider from "@providers/ModalProvider.astro"
+import Breadcrumb from "../components/Breadcrumb.astro"
+import Sidebar from "@components/Sidebar.astro"
+import { getSession } from "auth-astro/server"
 import "../styles/globals.css"
+import { db } from "@prisma"
 
 interface Props {
     lesson: "Solo" | "Team" | "Pro" | "Bonus"
+    chapterId: number
     title: string
     headings: {
         text: string
@@ -14,7 +19,33 @@ interface Props {
     }[]
 }
 
-const { lesson, title, headings } = Astro.props
+const { lesson, chapterId, title, headings } = Astro.props
+const { user } = Astro.locals
+
+const progress = await db.progress.findFirst({
+    where: {
+        user: {
+            email: user?.email
+        }
+    }
+})
+
+let defaultChecked
+
+switch (lesson) {
+    case "Solo":
+        defaultChecked = progress?.soloCompleted.includes(chapterId) || false
+        break
+    case "Team":
+        defaultChecked = progress?.teamCompleted.includes(chapterId) || false
+        break
+    case "Pro":
+        defaultChecked = progress?.proCompleted.includes(chapterId) || false
+        break
+    case "Bonus":
+        defaultChecked = progress?.bonusCompleted.includes(chapterId) || false
+        break
+}
 ---
 
 <html lang="en">
@@ -43,12 +74,19 @@ const { lesson, title, headings } = Astro.props
     </head>
     <body class="flex flex-col min-h-screen">
         <Breadcrumb lesson={lesson} title={title} />
+        <ModalProvider />
         <main class="flex divide-x divide-zinc-200 grow">
-            <Sidebar lesson={lesson} />
+            <Sidebar lesson={lesson} progress={progress} />
             <article
                 class="h-[calc(100vh-64px)] scroll-smooth overflow-scroll no-scrollbar flex-1 lesson-content p-5 pb-[50vh]"
             >
                 <slot />
+                <ProgressToggle
+                    defaultChecked={defaultChecked}
+                    chapterId={chapterId}
+                    lesson={lesson}
+                    client:load
+                />
             </article>
             <TableOfContentes headings={headings} />
         </main>

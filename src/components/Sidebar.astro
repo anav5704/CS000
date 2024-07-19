@@ -1,16 +1,20 @@
 ---
+import type { Progress } from "@prisma/client"
 import { getCollection } from "astro:content"
+import { CheckBox } from "@components/CheckBox"
 
 interface Props {
     lesson: "Solo" | "Team" | "Pro" | "Bonus"
+    progress: Progress | null
 }
 
-const { lesson } = Astro.props
+const { lesson, progress } = Astro.props
 
 let chapters: {
     title: string
     slug: string
     id: number
+    completed: boolean
 }[] = []
 
 switch (lesson) {
@@ -19,7 +23,8 @@ switch (lesson) {
         chapters = SoloLessons.map((lesson) => ({
             title: lesson.data.title,
             slug: lesson.slug,
-            id: lesson.data.id
+            id: lesson.data.id,
+            completed: progress?.soloCompleted.includes(lesson.data.id) || false
         }))
         break
     case "Team":
@@ -27,7 +32,8 @@ switch (lesson) {
         chapters = TeamLessons.map((lesson) => ({
             title: lesson.data.title,
             slug: lesson.slug,
-            id: lesson.data.id
+            id: lesson.data.id,
+            completed: progress?.teamCompleted.includes(lesson.data.id) || false
         }))
         break
     case "Pro":
@@ -35,7 +41,8 @@ switch (lesson) {
         chapters = ProLessons.map((lesson) => ({
             title: lesson.data.title,
             slug: lesson.slug,
-            id: lesson.data.id
+            id: lesson.data.id,
+            completed: progress?.proCompleted.includes(lesson.data.id) || false
         }))
 
         break
@@ -44,7 +51,9 @@ switch (lesson) {
         chapters = BonusLessons.map((lesson) => ({
             title: lesson.data.title,
             slug: lesson.slug,
-            id: lesson.data.id
+            id: lesson.data.id,
+            completed:
+                progress?.bonusCompleted.includes(lesson.data.id) || false
         }))
         break
 }
@@ -59,16 +68,24 @@ const currentPath = pathname.slice(1)
     <h2 class="text-zinc-500 text-sm uppercase">lesson chapters</h2>
     {
         chapters.map((chapter) => (
-            <a
-                href={chapter.slug}
-                class={
-                    currentPath.includes(chapter.slug)
-                        ? "underline"
-                        : "no-underline"
-                }
-            >
-                {chapter.title}
-            </a>
+            <div class="flex items-center gap-3">
+                <CheckBox
+                    lesson={lesson}
+                    chapterId={chapter.id}
+                    isDisabled={true}
+                    client:load
+                />
+                <a
+                    href={chapter.slug}
+                    class={
+                        currentPath.includes(chapter.slug)
+                            ? "underline"
+                            : "no-underline"
+                    }
+                >
+                    {chapter.title}
+                </a>
+            </div>
         ))
     }
 </aside>
@@ -78,6 +95,6 @@ const currentPath = pathname.slice(1)
         @apply w-60;
     }
     aside a {
-        @apply truncate hover:underline hover:text-black;
+        @apply truncate hover:underline;
     }
 </style>

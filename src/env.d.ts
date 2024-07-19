@@ -1,3 +1,12 @@
 /// <reference path="../.astro/types.d.ts" />
 /// <reference types="astro/client" />
-/// <reference types="astro-clerk-auth/env" />
+
+import type { User } from "@auth/core/types"
+
+declare namespace App {
+    interface Locals {
+        user: User
+    }
+}
+
+

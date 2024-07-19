@@ -1,6 +1,6 @@
 ---
-import { getSession } from "auth-astro/server"
 import { UserMenu } from "@components/UserMenu"
+import { db } from "@prisma"
 
 const links = [
     { href: "/lessons", label: "Lessons" },
@@ -12,7 +12,16 @@ const links = [
 const pathname = new URL(Astro.request.url).pathname
 const currentPath = pathname.slice(1)
 
-const session = await getSession(Astro.request)
+const { user } = Astro.locals
+
+const userProgress = await db.user.findFirst({
+    where: {
+        email: user?.email
+    },
+    include: {
+        progress: true
+    }
+})
 ---
 
 <div
@@ -41,7 +50,7 @@ const session = await getSession(Astro.request)
             }
         </div>
         <div>
-            <UserMenu user={session?.user} client:load />
+            <UserMenu user={userProgress} client:load />
         </div>
     </nav>
 </div>

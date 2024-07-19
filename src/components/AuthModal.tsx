@@ -19,7 +19,7 @@ export const AuthModal = () => {
             handleClose={handleClose}
             header="Create CS000 Account"
         >
-            <div className="flex flex-col items-center space-y-3">
+            <div className="flex flex-col items-center space-y-5">
                 <Button
                     onClick={() => signIn("google")}
                     className="btn-md btn-git flex items-center gap-3"

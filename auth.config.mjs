@@ -22,15 +22,18 @@ export default defineConfig({
                         email: session.user.email,
                     },
                 })
+
                 if (!user) {
                     await db.user.create({
                         data: {
                             email: session.user.email,
                             name: session.user.name,
                             image: session.user.image,
+                            progress: {
+                                create: {}
+                            }
                         },
                     })
-
                 }
             } catch (error) {
                 console.log("Auth error: ", error)
