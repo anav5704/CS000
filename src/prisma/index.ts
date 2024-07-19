@@ -1,15 +1,19 @@
-import type { PrismaClient } from "@prisma/client"
+import { PrismaClient } from "@prisma/client"
 
 let db: PrismaClient
 
-if (process.env.NODE_ENV === "development") {
-    import("@prisma/client").then((mod) => (db = new mod.PrismaClient()))
+declare global {
+    var db: PrismaClient | undefined
 }
 
-else {
-    import("@prisma/client/edge").then(
-        (mod) => (db = new mod.PrismaClient()),
-    )
+if (process.env.NODE_ENV === "production") {
+    db = new PrismaClient()
+} else {
+    if (!global.db) {
+        global.db = new PrismaClient()
+    }
+    db = global.db
 }
 
-export { db }
+export { db };
+
