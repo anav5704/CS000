@@ -1,47 +1,58 @@
 import { LessonProgress } from "@components/LessonProgress"
 import { isOpen, type } from '@context/ModalStore'
-import type { User } from "@auth/core/types"
+import { progress } from '@context/ProgressStore'
 import { useStore } from '@nanostores/react'
+import { getCollection } from "astro:content"
 import { signOut } from "auth-astro/client"
 import { Modal } from "@components/Modal"
-import { Button } from "./Button"
+import type { UserProgress } from "@types"
+
+const soloChapters = await getCollection("solo")
+const teamChapters = await getCollection("team")
+const proChapters = await getCollection("pro")
+const bonusChapters = await getCollection("bonus")
 
 interface Props {
-    user?: User
-}
-
-const progress = {
-    lessons: [
-        {
-            name: "Solo Lesson",
-            lessonId: "1",
-            chapterId: "1"
-        },
-        {
-            name: "Team Lesson",
-            lessonId: "2",
-            chapterId: "2"
-        },
-        {
-            name: "Pro Lesson",
-            lessonId: "3",
-            chapterId: "3"
-        },
-        {
-            name: "Bonus Lesson",
-            lessonId: "4",
-            chapterId: "4"
-        }
-    ]
+    user: UserProgress
 }
 
 export const AccountModal = ({ user }: Props) => {
+    const $progress = useStore(progress)
     const $isOpen = useStore(isOpen)
     const $type = useStore(type)
 
     const handleClose = () => {
         isOpen.set(!$isOpen)
         type.set(null)
+    }
+
+    const progressData = {
+        lessons: [
+            {
+                name: "Solo Lesson",
+                completion: $progress.soloCompleted.length,
+                totalChapters: soloChapters.length,
+                href: "/lessons/solo/introduction"
+            },
+            {
+                name: "Team Lesson",
+                completion: $progress.teamCompleted.length,
+                totalChapters: teamChapters.length,
+                href: "/lessons/team/introduction"
+            },
+            {
+                name: "Pro Lesson",
+                completion: $progress.proCompleted.length,
+                totalChapters: proChapters.length,
+                href: "/lessons/pro/introduction"
+            },
+            {
+                name: "Bonus Lesson",
+                completion: $progress.bonusCompleted.length,
+                totalChapters: bonusChapters.length,
+                href: "/lessons/bonus/introduction"
+            }
+        ]
     }
 
     return (
@@ -52,7 +63,7 @@ export const AccountModal = ({ user }: Props) => {
         >
             <>
                 <div className="space-y-5">
-                    {progress.lessons.map((lesson, index) => (
+                    {progressData.lessons.map((lesson, index) => (
                         <LessonProgress key={index} lesson={lesson} />
                     ))}
                 </div>
