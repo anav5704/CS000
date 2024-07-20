@@ -1,0 +1,51 @@
+---
+import Container from "@components/Container.astro"
+import Accordion from "@components/MDX/Accordion.astro"
+import Header from "@components/Header.astro"
+
+const FAQData = [
+    {
+        question: "Is CS000 a real course?",
+        answer: "No. CS000 is a open-source roject created for students to learn about version control. It is not a real course."
+    },
+    {
+        question: "Why is CS00 called CS000?",
+        answer: "The CS in the name stands for Computer Science. The 000 indicates that it should be done before any computer science course as Git and GitHub are the building blocks of modern programming."
+    },
+    {
+        question: "Does CS000 require credit card?",
+        answer: "No. CS000 is a free course."
+    },
+    {
+        question: "Is CS000 recognized by universities?",
+        answer: "No. It will however help you become a better developer and prepare you for the real world."
+    },
+    {
+        question: "What are the prerequisites for CS000?",
+        answer: "Just you and your computer."
+    },
+    {
+        question: "How long does it take to complete CS000?",
+        answer: "3 days. There are 3 main lessons, only 2 of whhich are recommended for first-year students. Each lesson takes about a few hours to complete."
+    },
+    {
+        question: "Are the frequrntly asked questions frequently asked?",
+        answer: "Yes. The frequently asked questions are asked frequently."
+    }
+]
+---
+
+<Container>
+    <section class="content">
+        <Header>
+            Frequently Asked <span class="text-git-gradient">Questions</span>
+        </Header>
+        <div class="md:w-[700px] mx-auto space-y-5">
+            {
+                FAQData.map(({ question, answer }) => (
+                    <Accordion question={question} answer={answer} />
+                ))
+            }
+        </div>
+    </section>
+</Container>
