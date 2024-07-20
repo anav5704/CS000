@@ -3,8 +3,47 @@ export const prerender = true
 
 import Layout from "../layouts/main.astro"
 import AboutHero from "../components/Blocks/AboutHero.astro"
+import Chart from "@components/Chart.astro"
+import Container from "@components/Container.astro"
+import Header from "@components/Header.astro"
+import FAQ from "@components/Blocks/FAQ.astro"
 ---
 
 <Layout>
     <AboutHero />
+    <hr />
+    <Container>
+        <section class="content">
+            <Header>
+                What <span class="text-git-gradient">Problem</span> Is CS000 Solving?
+            </Header>
+            <p>
+                Universities miss out on teaching one key concpet in their
+                computer sceince courses. The concept in question is version
+                control. This issue is widespread in Universities in the South
+                Pacific region. A survey of 40 students, 10 from aech year level
+                across BSE, BNS and CS/IS brings light to the problem. The data
+                below shows
+                <b>how students share code during an assignment. </b>
+            </p>
+            <Chart client:load />
+        </section>
+    </Container>
+    <Container>
+        <section class="content">
+            <Header>
+                How Does CS000 <span class="text-github-gradient">Solve</span> This
+                Problem?
+            </Header>
+            <p>
+                CS000: Collaborative coding with Git and GitHub, aims to solve
+                this issue by provding a simple and beginner-friendly
+                introduction to version control. It does so while integrating
+                concepts from firsst-year courses in hopes of making the topics
+                in CS000 more relatable and easy to understand.
+            </p>
+        </section>
+    </Container>
+    <hr />
+    <FAQ />
 </Layout>
