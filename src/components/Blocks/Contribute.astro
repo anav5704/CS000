@@ -1,0 +1,56 @@
+---
+import Description from "@components/Description.astro"
+import Grid from "@components/Grid.astro"
+import Header from "@components/Header.astro"
+
+const activeIsseues = 5
+
+const data = [
+    {
+        title: `Active Issues (${activeIsseues})`,
+        href: "https://github.com/anav5704/CS000/issues"
+    },
+    {
+        title: "Request Feature",
+        href: "https://github.com/anav5704/CS000/issues/new?template=feature_request.md"
+    },
+    {
+        title: "Report Bug",
+        href: "https://github.com/anav5704/CS000/issues/new?template=bug_report.md"
+    },
+    {
+        title: "Contibution Guide",
+        href: "https://github.com/anav5704/CS000/blob/main/.github/CONTRIBUTING.md"
+    },
+    {
+        title: "Issue Template",
+        herf: "https://github.com/anav5704/CS000/blob/main/.github/ISSUE_TEMPLATE.md"
+    },
+    {
+        title: "Pull Request Template",
+        herf: "https://github.com/anav5704/CS000/blob/main/.github/PULL_REQUEST_TEMPLATE.md"
+    }
+]
+---
+
+<section id="contribute" class="content">
+    <Header
+        ><span class="text-github-gradient">Contribute</span> To CS000
+    </Header>
+    <Description>
+        New to open-source? Try requesting feaures or reporting bugs.
+        <br />
+        Have experince? Help maintain and imrove the codebase.
+    </Description>
+    <Grid>
+        {
+            data.map((item) => (
+                <a href={item.href} class="no-underline">
+                    <div class="p-5 col-span-1 bg-github-fade h-fit rounded-2xl space-y-3">
+                        <h4 class="font-bold text-2xl">{item.title}</h4>
+                    </div>
+                </a>
+            ))
+        }
+    </Grid>
+</section>

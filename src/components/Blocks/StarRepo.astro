@@ -1,0 +1,59 @@
+---
+import Container from "@components/Container.astro"
+import Header from "@components/Header.astro"
+import Description from "@components/Description.astro"
+import { Image } from "astro:assets"
+
+const currentGoal = 10
+const stars = 1
+---
+
+<section id="star-repo" class="content">
+    <Header> Give CS000 A <span class="text-git-gradient">Star</span></Header>
+    <Description>
+        The easiest and qickest way to support CS000.
+        <br />
+        Just go to the <a href="https://github.com/anav5704/CS000">repo</a> and click
+        the star button. it.
+    </Description>
+    <Container>
+        <div class="grid grid-cols-2 gap-7">
+            <div class="p-5 col-span-1 bg-git-fade h-fit rounded-2xl space-y-3">
+                <h4 class="font-bold text-2xl">How It Works</h4>
+                <p>
+                    A GitHub star is like a "thumbs up" for a project on GitHub.
+                    Starring CS000 helps it gain visibility, credibility, and
+                    support. This will help CS000 grow and help more students.
+                </p>
+            </div>
+            <div
+                class="col-span-1 row-span-2 rounded-2xl border border-rose-500 overflow-hidden"
+            >
+                <a href="https://github.com/anav5704/CS000">
+                    <Image
+                        src="/src/images/star-cs000.png"
+                        alt="CS000 Logo"
+                        width="1920"
+                        height="1200"
+                        class="h-full w-full object-cover object-right"
+                    />
+                </a>
+            </div>
+            <div class="p-5 col-span-1 bg-git-fade rounded-2xl h-fit space-y-3">
+                <h4
+                    class="font-bold text-2xl flex items-center justify-between"
+                >
+                    <p>Our Goal</p>
+                    <p>{stars} / {currentGoal} Stars</p>
+                </h4>
+                <div class="bg-rose-200 rounded-full">
+                    <div
+                        style={{ width: `${(stars / currentGoal) * 100}%` }}
+                        class="h-4 bg-git-gradient rounded-full"
+                    >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>
