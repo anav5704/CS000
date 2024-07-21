@@ -1,47 +1,71 @@
-# Astro Starter Kit: Minimal
+<br />
 
-```sh
-npm create astro@latest -- --template minimal
-```
+<div align="center">
+    <a href="https://astro.build">
+        <img src="https://astro.badg.es/v2/built-with-astro/small.svg" alt="Built with Astro" width="192" height="32">
+    </a>
+</div>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+<br />
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./docs/banner-dark.webp">
+  <source media="(prefers-color-scheme: light)" srcset="./docs/banner-light.webp">
+  <img alt="CS000 Banner" src="./docs/banner-dark.webp">
+</picture>
 
-## 🚀 Project Structure
+<br />
 
-Inside of your Astro project, you'll see the following folders and files:
+<div align="center">
+  <h3>
+    Learn how to work on coding group projects the modern way.
+    <br />
+    Don't be the guy that emails code back and forth.
+  </h3>
+  <a href="/https://cs000.dev/">Get Started</a> •
+   <a href="/https://cs000.dev/contribute">Contribute</a> •
+   <a href="/https://discord.gg/cJxBsq8Qmh">Discord</a> •
+  <a href="/https://cs000.dev/about#faq">FAQ</a>
+</div>
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+<br />
+<br />
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 💭 What Is CS000?
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+CS000: collaborative coding with Git and GitHub is an open source project that aims to provide a simple and beginner-friendly introduction to version control. It is an interactive web based course with 0 prerequisites and can be completed in 3 days. All for a grand total of $0.00.
 
-Any static assets, like images, can be placed in the `public/` directory.
+![CS000 Demo](./docs/CS00-demo.webp)
 
-## 🧞 Commands
+## 🚀 Features
 
-All commands are run from the root of the project, from a terminal:
+-   User Auth - students can create a CS000 account using either Google or GitHub.
+-   Progress Tracking - students can keep track of which lessons they have completed.
+-   Interactive Lessons - students can answer questions and interact with components.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## ✨ Built With
 
-## 👀 Want to learn more?
+-   [Astro.js](https://astro.build) - Primary frontend and backend framework.
+-   [React.js](https://react.dev) - Advanced and interactive UI components.
+-   [TailwindCSS](https://tailwindcss.com) - Simple and powerful CSS framework.
+-   [Nanostores](https://github.com/nanostores/nanostores) - Lightweight state management.
+-   [MDX](https://mdxjs.com) - Interactive components for Markdown content.
+-   [Auth.js](https://authjs.dev) - Google and GitHub OAuth providers.
+-   [Prisma](https://prisma.io) - Schema design and database interaction.
+-   [Neon](https://neon.tech) - Managed serverless Postgres database.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 💖 Contribute
+
+Developers of all skill levels are welcome to contribute to this project. If you are student who is new to web development, feel free to report bugs or request features. If you have experience in the web development field, you can contribute code to the project. Before you start, make sure there are no existing [issues](https://github.com/anav5704/CS000/issues) or [pull requests](https://github.com/anav5704/CS000/pulls) that are related to your contribution.
+
+### Report Bug
+
+If you encounter any issues or bugs while using the CS000, please report them to help us improve. To report a bug, go [here](https://github.com/anav5704/CS000/issues/new?template=bug_report.md) and fill out the form.
+
+### Request Feature
+
+If you have an idea for a new feature or an improvement to an existing feature, we’d love to hear about it. To request a feature, go [here](https://github.com/anav5704/CS000/issues/new?template=feature_request.md) and fill out the form.
+
+### Contribute Code
+
+If you know your way around an Astro.js project, you can contribute code to CS000. To contribute, first read the [contribution guidelines](https://github.com/anav5704/CS000/blob/main/.github/CONTRIBUTING.md) and [code of conduct](https://github.com/anav5704/CS000/blob/main/.github/CODE_OF_CONDUCT.md). Once you're familiar with our guidelines, make your changes and submit a pull request.
