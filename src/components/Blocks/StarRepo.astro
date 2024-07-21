@@ -4,6 +4,8 @@ import Header from "@components/Header.astro"
 import Description from "@components/Description.astro"
 import { Image } from "astro:assets"
 
+import starCS000 from "../../images/star-cs000.png"
+
 const currentGoal = 10
 const stars = 1
 ---
@@ -31,7 +33,7 @@ const stars = 1
             >
                 <a href="https://github.com/anav5704/CS000">
                     <Image
-                        src="/src/images/star-cs000.png"
+                        src={starCS000}
                         alt="CS000 Logo"
                         width="1920"
                         height="1200"
