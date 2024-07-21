@@ -5,8 +5,7 @@ import { db } from "@prisma"
 const links = [
     { href: "/lessons", label: "Lessons" },
     { href: "/support", label: "Support" },
-    { href: "/about", label: "About" },
-    { href: "/faq", label: "FAQ" }
+    { href: "/about", label: "About" }
 ]
 
 const pathname = new URL(Astro.request.url).pathname

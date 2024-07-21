@@ -1,0 +1,54 @@
+<div class="h-[400px] w-full grid place-content-center relative">
+    <div
+        class="content-[''] animate-pulse rounded-2xl absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-full bg-zinc-200"
+    >
+    </div>
+    <div id="chart1"></div>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"
+></script>
+<script type="text/javascript">
+    google.charts.load("current", { packages: ["corechart"] })
+
+    google.charts.setOnLoadCallback(drawChart)
+
+    function drawChart() {
+        var data = new google.visualization.DataTable()
+        data.addColumn("string", "Method")
+        data.addColumn("number", "Count")
+        data.addRows([
+            ["Viber", 9],
+            ["Eamil", 6],
+            ["Google Drive", 5],
+            ["GitHub", 2]
+        ])
+
+        var options = {
+            chartArea: {
+                top: 10,
+                height: 300
+            },
+            fontName: "DM Sans",
+            legend: {
+                position: "bottom",
+                textStyle: {
+                    fontSize: 16
+                }
+            },
+            pieSliceTextStyle: {
+                fontSize: 16
+            },
+            pieSliceText: "none",
+            tooltip: {},
+            height: 400,
+            width: 900
+        }
+
+        var chart1 = new google.visualization.PieChart(
+            document.getElementById("chart1")
+        )
+
+        chart1.draw(data, options)
+    }
+</script>
