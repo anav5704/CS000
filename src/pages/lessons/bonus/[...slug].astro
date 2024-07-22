@@ -18,10 +18,13 @@ const { Content, headings } = await chpater.render()
 ---
 
 <Layout
-    lesson="Bonus"
-    chapterId={chpater.data.id}
     title={chpater.data.title}
-    headings={headings}
+    description={chpater.data.title}
+    lessonData={{
+        lesson: "Bonus",
+        chapterId: chpater.data.id,
+        headings
+    }}
 >
     <Content />
 </Layout>

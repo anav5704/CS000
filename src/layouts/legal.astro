@@ -2,6 +2,13 @@
 import Navbar from "../components/Navbar.astro"
 import Footer from "../components/Footer.astro"
 import "../styles/globals.css"
+
+interface Props {
+    title: string
+    description: string
+}
+
+const { title, description } = Astro.props
 ---
 
 <html lang="en">
@@ -21,12 +28,13 @@ import "../styles/globals.css"
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description} />
+        <meta property="og:site_name" content="CS000" />
         <link rel="sitemap" href="/sitemap-index.xml" />
         <meta property="og:image" content="/og.png" />
-        <meta name="generator" content={Astro.generator} />
-        <title>CS000 - Collaborative Coding with Git and GitHub!</title>
+        <title>CS000 | {title}</title>
     </head>
     <body class="pt-[10vh] flex flex-col min-h-screen">
         <Navbar />

@@ -18,10 +18,13 @@ const { Content, headings } = await chapter.render()
 ---
 
 <Layout
-    lesson="Pro"
-    chapterId={chapter.data.id}
     title={chapter.data.title}
-    headings={headings}
+    description={chapter.data.title}
+    lessonData={{
+        lesson: "Pro",
+        chapterId: chapter.data.id,
+        headings
+    }}
 >
     <Content />
 </Layout>

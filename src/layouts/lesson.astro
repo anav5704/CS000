@@ -8,17 +8,20 @@ import "../styles/globals.css"
 import { db } from "@prisma"
 
 interface Props {
-    lesson: "Solo" | "Team" | "Pro" | "Bonus"
-    chapterId: number
     title: string
-    headings: {
-        text: string
-        slug: string
-        depth: number
-    }[]
+    description: string
+    lessonData: {
+        lesson: "Solo" | "Team" | "Pro" | "Bonus"
+        chapterId: number
+        headings: {
+            text: string
+            slug: string
+            depth: number
+        }[]
+    }
 }
 
-const { lesson, chapterId, title, headings } = Astro.props
+const { lessonData, title, description } = Astro.props
 const { user } = Astro.locals
 
 const progress = await db.progress.findFirst({
@@ -47,29 +50,30 @@ const progress = await db.progress.findFirst({
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description} />
+        <meta property="og:site_name" content="CS000" />
         <link rel="sitemap" href="/sitemap-index.xml" />
         <meta property="og:image" content="/og.png" />
-        <meta name="generator" content={Astro.generator} />
-        <title>CS000 - Collaborative Coding with Git and GitHub!</title>
+        <title>CS000 | {lessonData.lesson} Lesson: {title}</title>
     </head>
     <body class="flex flex-col min-h-screen">
-        <Breadcrumb lesson={lesson} title={title} />
+        <Breadcrumb lesson={lessonData.lesson} title={title} />
         <ModalProvider />
         <main class="flex divide-x divide-zinc-200 grow">
-            <Sidebar lesson={lesson} progress={progress} />
+            <Sidebar lesson={lessonData.lesson} progress={progress} />
             <article
                 class="h-[calc(100vh-64px)] scroll-smooth overflow-scroll no-scrollbar flex-1 lesson-content p-5 pb-[50vh]"
             >
                 <slot />
                 <ProgressToggle
-                    chapterId={chapterId}
-                    lesson={lesson}
+                    chapterId={lessonData.chapterId}
+                    lesson={lessonData.lesson}
                     client:load
                 />
             </article>
-            <TableOfContentes headings={headings} />
+            <TableOfContentes headings={lessonData.headings} />
         </main>
     </body>
 </html>
