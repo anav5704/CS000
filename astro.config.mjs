@@ -11,6 +11,9 @@ import auth from "auth-astro";
 export default defineConfig({
     site: "https://www.cs000.dev",
     output: "server",
+    adapter: vercel({
+        webAnalytics: true
+    }),
     markdown: {
         shikiConfig: {
             theme: "github-dark-dimmed"
