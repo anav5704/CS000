@@ -1,6 +1,7 @@
 import Google from '@auth/core/providers/google';
 import GitHub from '@auth/core/providers/github';
 import { defineConfig } from 'auth-astro';
+import * as Sentry from "@sentry/astro";
 import { db } from "@prisma";
 
 export default defineConfig({
@@ -36,6 +37,7 @@ export default defineConfig({
                     })
                 }
             } catch (error) {
+                Sentry.captureException(err);
                 console.log("Auth error: ", error)
             } finally {
                 return session

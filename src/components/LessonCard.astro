@@ -1,5 +1,6 @@
 ---
 import { type LucideIcon, Check } from "lucide-react"
+import { Button } from "@components/Button"
 
 interface Props {
     title: string
@@ -32,9 +33,9 @@ switch (type) {
     class={style +
         " no-underline flex flex-col justify-end col-span-1  rounded-3xl p-5 gap-3"}
 >
-    <div class={background + " rounded-2xl w-fit p-5 text-white"}>
+    <!-- <div class={background + " rounded-2xl w-fit p-5 text-white"}>
         {(<Icon size={25} strokeWidth={2} />)}
-    </div>
+    </div> -->
     <p class="font-bold text-2xl">{title}</p>
     {description}
     <h4 class="font-bold text-2xl">Contents</h4>
@@ -48,4 +49,7 @@ switch (type) {
             ))
         }
     </ul>
+    <Button className={background + " btn-md text-white w-fit ml-auto"}>
+        Start Lesson
+    </Button>
 </a>
