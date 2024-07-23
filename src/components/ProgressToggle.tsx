@@ -44,7 +44,7 @@ export const ProgressToggle = ({ lesson, chapterId }: Props) => {
 
 
     return (
-        <button onClick={handleClick} disabled={isLoading} className="transition disabled:cursor-not-allowed disabled:opacity-50 flex items-center gap-3 mt-10">
+        <button onClick={handleClick} disabled={isLoading} className="transition disabled:cursor-not-allowed disabled:opacity-50 flex items-center gap-3 mt-6">
             <CheckBox lesson={lesson} chapterId={chapterId} isDisabled={isLoading} />
             <p>{isLoading ? "One sec, updating..." : "Mark as completed"}</p>
         </button>

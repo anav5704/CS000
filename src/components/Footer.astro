@@ -111,7 +111,7 @@ const links2 = [
                 {
                     links1.map((link) => (
                         <div class="w-1/2 md:w-fit md:ml-20 flex flex-col gap-2">
-                            <h4>{link.title}</h4>
+                            <p>{link.title}</p>
                             {link.subLinks.map((subLink) => (
                                 <a
                                     href={subLink.href}
@@ -128,7 +128,7 @@ const links2 = [
                 {
                     links2.map((link) => (
                         <div class="w-1/2 md:w-fit md:ml-20 flex flex-col gap-2">
-                            <h4>{link.title}</h4>
+                            <p>{link.title}</p>
                             {link.subLinks.map((subLink) => (
                                 <a
                                     href={subLink.href}
@@ -148,7 +148,6 @@ const links2 = [
             <img
                 src="https://astro.badg.es/v2/built-with-astro/medium.svg"
                 alt="Built with Astro"
-                class="[all:unset]"
                 width="240"
                 height="40"
             />

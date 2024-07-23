@@ -34,7 +34,7 @@ const loops = [1, 2]
                             class={`${row % 2 == 0 ? "animate-infinite-scroll-left" : "animate-infinite-scroll-right"} [&_li]:md:mx-5 [&_li]:mx-2.5 flex items-center justify-center md:justify-start`}
                         >
                             {cols.map((col) => (
-                                <li class="overflow-hidden rounded-2xl h-16 w-16">
+                                <li class="overflow-hidden rounded-xl h-16 w-16">
                                     <Image
                                         src={col}
                                         alt="image"

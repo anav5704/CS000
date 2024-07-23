@@ -49,6 +49,10 @@
             @apply list-disc ml-5;
         }
 
+        img {
+            @apply rounded-xl;
+        }
+
         .astro-code {
             @apply rounded-xl p-3;
         }
@@ -62,10 +66,6 @@
                 @apply [all:unset];
             }
         }
-    }
-
-    img {
-        @apply rounded-xl;
     }
 
     a {

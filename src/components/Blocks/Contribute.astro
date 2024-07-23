@@ -12,11 +12,11 @@ const data = [
     },
     {
         title: "Request Feature",
-        href: "https://github.com/anav5704/CS000/issues/new?template=feature_request.md"
+        href: "https://github.com/anav5704/CS000/issues/new?template=feature_request.md&title=[Feature]"
     },
     {
         title: "Report Bug",
-        href: "https://github.com/anav5704/CS000/issues/new?template=bug_report.md"
+        href: "https://github.com/anav5704/CS000/issues/new?template=bug_report.md&title=[Bug]"
     },
     {
         title: "Contibution Guide",
@@ -24,11 +24,11 @@ const data = [
     },
     {
         title: "Issue Template",
-        herf: "https://github.com/anav5704/CS000/blob/main/.github/ISSUE_TEMPLATE.md"
+        href: "https://github.com/anav5704/CS000/blob/main/.github/ISSUE_TEMPLATE"
     },
     {
         title: "Pull Request Template",
-        herf: "https://github.com/anav5704/CS000/blob/main/.github/PULL_REQUEST_TEMPLATE.md"
+        href: "https://github.com/anav5704/CS000/blob/main/.github/PULL_REQUEST_TEMPLATE.md"
     }
 ]
 ---
@@ -47,7 +47,7 @@ const data = [
             data.map((item) => (
                 <a href={item.href} class="no-underline">
                     <div class="p-5 col-span-1 bg-github-fade h-fit rounded-2xl space-y-3">
-                        <h4 class="font-bold text-2xl">{item.title}</h4>
+                        <p class="font-bold text-2xl">{item.title}</p>
                     </div>
                 </a>
             ))

@@ -25,7 +25,7 @@ export const AuthModal = () => {
                     className="btn-md btn-git flex items-center gap-3"
                 >
                     <img
-                        height={40}
+                        height={20}
                         width={20}
                         src="./icons/google.svg"
                         alt="google login"
@@ -37,7 +37,7 @@ export const AuthModal = () => {
                     className="btn-md btn-github flex items-center gap-3"
                 >
                     <img
-                        height={40}
+                        height={20}
                         width={20}
                         src="./icons/github.svg"
                         alt="github login"

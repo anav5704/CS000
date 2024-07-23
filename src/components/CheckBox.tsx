@@ -25,9 +25,9 @@ export const CheckBox = ({ lesson, isDisabled, chapterId }: Props) => {
 
     return (
         <div className="inline-flex items-center">
-            <label className="relative flex items-center rounded-full disabled:cursor-not-allowed cursor-pointer" htmlFor="check">
-                <input readOnly disabled={isDisabled} checked={isChecked} type="checkbox"
-                    className="before:content[''] peer relative h-5 w-5 disabled:cursor-not-allowed cursor-pointer appearance-none rounded-md border border-zinc-400 transition-all before:transition-opacity checked:bg-zinc-800 checked:before:bg-zinc800 hover:before:opacity-10"
+            <label className=" p-0 rounded-md relative flex items-center disabled:cursor-not-allowed cursor-pointer" htmlFor="check">
+                <input aria-label="Checkbox" readOnly disabled={isDisabled} checked={isChecked} type="checkbox"
+                    className="rounded-full before:content[''] peer relative h-6 w-6 disabled:cursor-not-allowed cursor-pointer appearance-none  bg-zinc-200 transition-all before:transition-opacity  checked:bg-github-gradient checked:before:bg-zinc800 hover:before:opacity-10"
                     id="check" />
                 <span
                     className="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
