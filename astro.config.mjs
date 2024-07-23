@@ -28,7 +28,7 @@ export default defineConfig({
     },
     integrations: [mdx(), tailwind(), react(), sitemap(), auth(),
     sentry({
-        dsn: "https://03f5a7bbfb6e76b68622d3fd977a06f6@o4507650560950272.ingest.us.sentry.io/4507650563375104",
+        dsn: process.env.SENTRY_DSN,
         sourceMapsUploadOptions: {
             project: "javascript-astro",
             authToken: process.env.SENTRY_AUTH_TOKEN,
