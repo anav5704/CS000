@@ -9,7 +9,7 @@ import auth from "auth-astro";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://www.cs000.dev",
+    site: import.meta.env.PUBLIC_SITE_URL,
     output: "server",
     adapter: vercel({
         webAnalytics: true
@@ -21,17 +21,17 @@ export default defineConfig({
     },
     prefetch: {
         prefetchAll: true,
-        defaultStrategy: "hover"
+        defaultStrategy: "viewport"
     },
     devToolbar: {
         enabled: false
     },
     integrations: [mdx(), tailwind(), react(), sitemap(), auth(),
     sentry({
-        dsn: process.env.SENTRY_DSN,
+        dsn: import.meta.env.SENTRY_DSN,
         sourceMapsUploadOptions: {
-            project: "javascript-astro",
-            authToken: process.env.SENTRY_AUTH_TOKEN,
+            project: import.meta.SENTRY_PROJECT,
+            authToken: import.meta.env.SENTRY_AUTH_TOKEN,
         },
     })]
 });
