@@ -12,7 +12,9 @@ export default defineConfig({
     site: import.meta.env.PUBLIC_SITE_URL,
     output: "server",
     adapter: vercel({
-        webAnalytics: true
+        webAnalytics: {
+            enabled: true
+        }
     }),
     markdown: {
         shikiConfig: {
