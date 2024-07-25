@@ -1,6 +1,5 @@
 ---
-import { UserMenu } from "./UserMenu"
-import { db } from "@prisma"
+import UserMenuWrapper from "@components/UserMenuWrapper.astro"
 
 interface Props {
     lesson: string
@@ -8,16 +7,6 @@ interface Props {
 }
 
 const { lesson, title } = Astro.props
-const { user } = Astro.locals
-
-const userPorgress = await db.user.findFirst({
-    where: {
-        email: user?.email
-    },
-    include: {
-        progress: true
-    }
-})
 ---
 
 <nav
@@ -32,11 +21,13 @@ const userPorgress = await db.user.findFirst({
         <span>{"/"}</span>
         <a href="">{title}</a>
     </div>
-    <UserMenu user={userPorgress} client:load />
+    <UserMenuWrapper server:defer>
+        <UserMenuWrapper skeleton slot="fallback" />
+    </UserMenuWrapper>
 </nav>
 
 <style>
-    nav a {
+    nav > div > a {
         @apply no-underline hover:underline;
     }
 </style>

@@ -1,0 +1,29 @@
+---
+import type { UserProgress } from "@types"
+import { UserMenu } from "./UserMenu"
+import { db } from "@prisma"
+
+const { skeleton } = Astro.props
+const { user } = Astro.locals
+
+let userProgress: UserProgress | null = null
+
+if (user) {
+    userProgress = await db.user.findFirst({
+        where: {
+            email: user?.email
+        },
+        include: {
+            progress: true
+        }
+    })
+}
+---
+
+{
+    skeleton ? (
+        <div class="h-[30px] w-[30px] rounded-full bg-github-gradient" />
+    ) : (
+        <UserMenu user={userProgress} client:load />
+    )
+}

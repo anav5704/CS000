@@ -25,6 +25,9 @@ export default defineConfig({
         prefetchAll: true,
         defaultStrategy: "viewport"
     },
+    experimental: {
+        serverIslands: true
+    },
     devToolbar: {
         enabled: false
     },

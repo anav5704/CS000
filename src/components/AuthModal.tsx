@@ -3,8 +3,11 @@ import { useStore } from '@nanostores/react'
 import { Button } from "@components/Button"
 import { signIn } from "auth-astro/client"
 import { Modal } from "@components/Modal"
+import { useEffect, useState } from "react"
+import qs from "query-string"
 
 export const AuthModal = () => {
+    const [login, setLogin] = useState("")
     const $isOpen = useStore(isOpen)
     const $type = useStore(type)
 
@@ -12,6 +15,16 @@ export const AuthModal = () => {
         isOpen.set(!$isOpen)
         type.set(null)
     }
+
+    useEffect(() => {
+        const url = qs.parseUrl(window.location.href)
+        setLogin(url.query.login as string)
+
+        if (login) {
+            isOpen.set(!$isOpen)
+            type.set("auth")
+        }
+    }, [login])
 
     return (
         <Modal
@@ -45,7 +58,7 @@ export const AuthModal = () => {
                     Continue with Google
                 </Button>
             </div>
-            <p>An account is required to save your <br /> progress and access your lessons.</p>
+            <p>An account is required for lesson <br /> access and progress tracking.</p>
         </Modal >
     )
 }

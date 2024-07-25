@@ -1,6 +1,5 @@
 ---
-import { UserMenu } from "@components/UserMenu"
-import { db } from "@prisma"
+import UserMenuWrapper from "./UserMenuWrapper.astro"
 
 const links = [
     { href: "/lessons", label: "Lessons" },
@@ -10,24 +9,13 @@ const links = [
 
 const pathname = new URL(Astro.request.url).pathname
 const currentPath = pathname.slice(1)
-
-const { user } = Astro.locals
-
-const userProgress = await db.user.findFirst({
-    where: {
-        email: user?.email
-    },
-    include: {
-        progress: true
-    }
-})
 ---
 
 <div
     class="!m-0 border-b broder-zinc-3200 h-14 z-10 backdrop-blur-xl bg-white/50 fixed top-0 w-screen flex items-center justify-center"
 >
     <nav
-        class="[&>div>a]:no-underline [&>div>a:hover]:underline [&>div>a:hover]:text-black w-full md:w-4/5 lg:w-3/4 mx-auto flex items-center justify-between"
+        class="w-full md:w-4/5 lg:w-3/4 mx-auto flex items-center justify-between"
     >
         <div>
             <a class="!text-black" href="/">CS000</a>
@@ -49,7 +37,15 @@ const userProgress = await db.user.findFirst({
             }
         </div>
         <div>
-            <UserMenu user={userProgress} client:load />
+            <UserMenuWrapper server:defer>
+                <UserMenuWrapper skeleton slot="fallback" />
+            </UserMenuWrapper>
         </div>
     </nav>
 </div>
+
+<style>
+    nav > div > a {
+        @apply no-underline hover:underline;
+    }
+</style>

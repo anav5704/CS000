@@ -10,15 +10,17 @@ interface Props {
 
 export const UserMenu = ({ user }: Props) => {
     useEffect(() => {
-        if (user && !progress.value) {
+        if (user) {
             progress.set({
                 soloCompleted: user?.progress?.soloCompleted ?? [],
                 teamCompleted: user?.progress?.teamCompleted ?? [],
                 proCompleted: user?.progress?.proCompleted ?? [],
                 bonusCompleted: user?.progress?.bonusCompleted ?? [],
             })
+
+            console.log(user)
         }
-    }, [])
+    }, [user])
 
     const $isOpen = useStore(isOpen)
 
@@ -50,7 +52,8 @@ export const UserMenu = ({ user }: Props) => {
                         Sign In
                     </button>
                 </div>
-            )}
-        </div>
+            )
+            }
+        </div >
     )
 }
