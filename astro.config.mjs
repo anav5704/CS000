@@ -9,7 +9,7 @@ import auth from "auth-astro";
 
 // https://astro.build/config
 export default defineConfig({
-    site: import.meta.env.PUBLIC_SITE_URL,
+    site: "https://www.cs000.dev",
     output: "server",
     adapter: vercel({
         webAnalytics: {
