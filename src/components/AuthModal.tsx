@@ -34,6 +34,7 @@ export const AuthModal = () => {
         >
             <div className="flex flex-col items-center space-y-5">
                 <Button
+                    eventName="Google Sign Up"
                     onClick={() => signIn("google")}
                     className="btn-md btn-git flex items-center gap-3"
                 >
@@ -46,6 +47,7 @@ export const AuthModal = () => {
                     Continue with Google
                 </Button>
                 <Button
+                    eventName="GitHub Sign Up"
                     onClick={() => signIn("github")}
                     className="btn-md btn-github flex items-center gap-3"
                 >
@@ -55,7 +57,7 @@ export const AuthModal = () => {
                         src="./icons/github.svg"
                         alt="github login"
                     />
-                    Continue with Google
+                    Continue with GitHub
                 </Button>
             </div>
             <p>An account is required for lesson <br /> access and progress tracking.</p>

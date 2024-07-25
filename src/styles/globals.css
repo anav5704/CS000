@@ -168,6 +168,16 @@
         inset: 0;
     }
 
+    .bg-cs000-gradient {
+        background: linear-gradient(
+            to bottom right,
+            #ef4444,
+            #ec4899,
+            #a855f7,
+            #3b82f6
+        );
+    }
+
     .glow {
         position: relative;
         z-index: 1;

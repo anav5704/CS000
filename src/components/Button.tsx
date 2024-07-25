@@ -1,12 +1,13 @@
 interface Props {
     children: React.ReactNode,
     onClick?: () => void,
-    className: string
+    className: string,
+    eventName?: string,
 }
 
-export const Button = ({ children, onClick, className }: Props) => {
+export const Button = ({ children, onClick, className, eventName }: Props) => {
     return (
-        <button onClick={onClick} className={className}>
+        <button data-umami-event={eventName} onClick={onClick} className={className}>
             {children}
         </button>
     )
