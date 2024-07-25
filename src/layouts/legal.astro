@@ -30,17 +30,19 @@ const { title, description } = Astro.props
             defer
             is:inline
             src="https://cloud.umami.is/script.js"
-            data-website-id="85fbce64-883c-4a5e-8c7b-7923d355078d"></script>
+            data-website-id="85fbce64-883c-4a5e-8c7b-7923d355078d"
+            data-host-url="https://www.cs000.dev"></script>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <meta name="description" content={description} />
-        <meta property="og:site_name" content="CS000" />
-        <link rel="sitemap" href="/sitemap-index.xml" />
-        <meta property="og:image" content="/og.png" />
-        <title>CS000 | {title}</title>
-    </head>
+        <meta name="generator" content={Astro.generator} /></head
+    >````
+    <meta name="description" content={description} />
+    <meta property="og:site_name" content="CS000" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:image" content="/og.png" />
+    <title>CS000 | {title}</title>
+
     <body class="pt-[10vh] flex flex-col min-h-screen">
         <Navbar />
         <main class="legal">
@@ -48,4 +50,6 @@ const { title, description } = Astro.props
         </main>
         <Footer />
     </body>
+
+
 </html>

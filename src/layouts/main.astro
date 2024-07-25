@@ -11,6 +11,16 @@ interface Props {
 }
 
 const { title, description } = Astro.props
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site)
+
+const wesbiteStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Anav Chand",
+    alternateName: "Anav",
+    url: pageUrl
+}
 ---
 
 <html lang="en">
@@ -31,7 +41,14 @@ const { title, description } = Astro.props
             defer
             is:inline
             src="https://cloud.umami.is/script.js"
-            data-website-id="85fbce64-883c-4a5e-8c7b-7923d355078d"></script>
+            data-website-id="85fbce64-883c-4a5e-8c7b-7923d355078d"
+            data-host-url="https://www.cs000.dev"></script>
+        <script
+            defer
+            is:inline
+            type="application/ld+json"
+            set:html={JSON.stringify(wesbiteStructuredData)}
+        />
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
