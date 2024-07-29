@@ -62,9 +62,12 @@ export const AccountModal = () => {
                         <LessonProgress key={index} lesson={lesson} />
                     ))}
                 </div>
-                <a onClick={() => signOut()} className="transition cursor-pointer hover:text-rose-500 mt-2">
+                <button
+                    onClick={() => signOut()}
+                    className="transition cursor-pointer hover:text-rose-500 mt-2 underline"
+                >
                     Log Out
-                </a>
+                </button>
             </>
         </Modal >
     )

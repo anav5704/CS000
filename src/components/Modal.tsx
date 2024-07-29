@@ -4,10 +4,11 @@ interface Props {
     header: string,
     children: React.ReactNode,
     isOpen: boolean,
+    allowClose?: boolean,
     handleClose: () => void
 }
 
-export const Modal = ({ header, children, isOpen, handleClose }: Props) => {
+export const Modal = ({ header, children, isOpen, handleClose, allowClose = true }: Props) => {
     if (!isOpen) return null
 
     return (
@@ -16,12 +17,12 @@ export const Modal = ({ header, children, isOpen, handleClose }: Props) => {
                 open={isOpen}
                 className="relative bg-white rounded-2xl text-center p-7 flex flex-col items-center gap-10 w-full max-w-md"
             >
-                <div
+                {allowClose && <div
                     onClick={handleClose}
                     className="text-zinc-400 hover:text-black transition absolute top-0 right-0 cursor-pointer p-5"
                 >
                     <X size={20} />
-                </div>
+                </div>}
                 <h1 className="text-2xl font-bold">{header}</h1>
                 {children}
             </dialog>

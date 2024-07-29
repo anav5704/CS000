@@ -1,6 +1,5 @@
 import { progress, removeItem, addItem } from "@context/ProgressStore"
 import { CheckBox } from "@components/CheckBox"
-import * as Sentry from "@sentry/astro"
 import { useState } from "react"
 
 interface Props {
@@ -37,7 +36,6 @@ export const ProgressToggle = ({ lesson, chapterId }: Props) => {
             }
 
         } catch (error) {
-            Sentry.captureException(error)
             console.error(error)
         } finally {
             setIsLoading(false)

@@ -8,6 +8,7 @@ interface Props {
     user?: UserProgress | null
 }
 
+
 export const UserMenu = ({ user }: Props) => {
     useEffect(() => {
         if (user) {
@@ -17,8 +18,6 @@ export const UserMenu = ({ user }: Props) => {
                 proCompleted: user?.progress?.proCompleted ?? [],
                 bonusCompleted: user?.progress?.bonusCompleted ?? [],
             })
-
-            console.log(user)
         }
     }, [user])
 
@@ -37,7 +36,10 @@ export const UserMenu = ({ user }: Props) => {
     return (
         <div>
             {user ? (
-                <button onClick={handleOpenAccountModal}>
+                <button
+                    onClick={handleOpenAccountModal}
+                    data-umami-event="User Menu"
+                >
                     <img
 
                         src={user.image ?? ""}
@@ -48,8 +50,12 @@ export const UserMenu = ({ user }: Props) => {
                 </button>
             ) : (
                 <div>
-                    <button onClick={handleOpenAuthModal} className="hover:underline">
-                        Sign In
+                    <button
+                        onClick={handleOpenAuthModal}
+                        className="hover:underline"
+                        data-umami-event="Sign Up Navbar"
+                    >
+                        Sign Up
                     </button>
                 </div>
             )

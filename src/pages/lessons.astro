@@ -1,15 +1,13 @@
 ---
 export const prerender = true
 
-import Layout from "../layouts/main.astro"
 import LessonsHero from "../components/Blocks/LessosHero.astro"
 import LessonCard from "../components/LessonCard.astro"
 import Container from "../components/Container.astro"
-import { User, Users, Crown, Gift } from "lucide-react"
+import Layout from "../layouts/main.astro"
 
 const lessons = [
     {
-        icon: User,
         title: "Solo Lesson",
         description:
             "This lesson will introduce you to the basics of Git and GitHub. It will prepare you to use these tools for indiviaual assignements and  prjects.",
@@ -22,7 +20,6 @@ const lessons = [
         url: "/lessons/solo/introduction"
     },
     {
-        icon: Users,
         title: "Team Lesson",
         description:
             "You're gonna need a friend for this one. This losson will go over how multiple people can work on the same project at the same time.",
@@ -35,7 +32,6 @@ const lessons = [
         url: "/lessons/team/introduction"
     },
     {
-        icon: Crown,
         title: "Pro Lesson",
         description:
             "Shits about to get real. This lessonon will go over how Git is used in the real world and some best practices to go along with it.",
@@ -48,7 +44,6 @@ const lessons = [
         url: "/lessons/pro/introduction"
     },
     {
-        icon: Gift,
         title: "Bonus Lesson",
         description:
             "For those who are willing to go the extra mile. This lesson introduces tools and resources that will help you to be more productive.",
@@ -75,7 +70,6 @@ const lessons = [
                 lessons.map((lesson) => (
                     <LessonCard
                         type={lesson.type as "git" | "github"}
-                        icon={lesson.icon}
                         title={lesson.title}
                         description={lesson.description}
                         items={lesson.items}

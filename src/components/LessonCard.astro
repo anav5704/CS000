@@ -1,17 +1,16 @@
 ---
-import { type LucideIcon, Check } from "lucide-react"
+import { Check } from "lucide-react"
 import { Button } from "@components/Button"
 
 interface Props {
     title: string
     description: string
-    icon: LucideIcon
     items: string[]
     url: string
     type: "git" | "github"
 }
 
-const { title, description, icon: Icon, items, type, url } = Astro.props
+const { title, description, items, type, url } = Astro.props
 
 let style = ""
 let background = ""

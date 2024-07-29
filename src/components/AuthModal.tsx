@@ -2,12 +2,12 @@ import { isOpen, type } from '@context/ModalStore'
 import { useStore } from '@nanostores/react'
 import { Button } from "@components/Button"
 import { signIn } from "auth-astro/client"
-import { Modal } from "@components/Modal"
 import { useEffect, useState } from "react"
-import qs from "query-string"
+import { Modal } from "@components/Modal"
 
 export const AuthModal = () => {
-    const [login, setLogin] = useState("")
+    const [forceOpen, setForceOpen] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
     const $isOpen = useStore(isOpen)
     const $type = useStore(type)
 
@@ -16,45 +16,70 @@ export const AuthModal = () => {
         type.set(null)
     }
 
-    useEffect(() => {
-        const url = qs.parseUrl(window.location.href)
-        setLogin(url.query.login as string)
+    const handleSignUp = (provider: "google" | "github") => {
+        setIsLoading(true)
+        signIn(provider)
+    }
 
-        if (login) {
-            isOpen.set(!$isOpen)
-            type.set("auth")
+    useEffect(() => {
+        const url = new URL(window.location.href)
+
+        const protectedRoutes = [
+            "/lessons/solo",
+            "/lessons/team",
+            "/lessons/pro",
+            "/lessons/bonus",
+        ]
+
+        const checkAuth = async () => {
+            const response = await fetch("/api/user/auth")
+            const data = await response.json()
+
+            if (!data.authenticated) {
+                setForceOpen(true)
+                isOpen.set(!$isOpen)
+                type.set("auth")
+            }
+
         }
-    }, [login])
+
+        if (protectedRoutes.some(route => url.pathname.includes(route))) checkAuth()
+    }, [])
 
     return (
         <Modal
             isOpen={$isOpen && $type == "auth"}
             handleClose={handleClose}
             header="Create CS000 Account"
+            allowClose={!forceOpen}
         >
             <div className="flex flex-col items-center space-y-5">
                 <Button
+                    id="google-sign-up"
+                    isDisabled={isLoading}
                     eventName="Google Sign Up"
-                    onClick={() => signIn("google")}
+                    onClick={() => handleSignUp("google")}
                     className="btn-md btn-git flex items-center gap-3"
                 >
                     <img
                         height={20}
                         width={20}
-                        src="./icons/google.svg"
+                        src="/icons/google.svg"
                         alt="google login"
                     />
                     Continue with Google
                 </Button>
                 <Button
+                    id="github-sign-up"
+                    isDisabled={isLoading}
                     eventName="GitHub Sign Up"
-                    onClick={() => signIn("github")}
+                    onClick={() => handleSignUp("github")}
                     className="btn-md btn-github flex items-center gap-3"
                 >
                     <img
                         height={20}
                         width={20}
-                        src="./icons/github.svg"
+                        src="/icons/github.svg"
                         alt="github login"
                     />
                     Continue with GitHub

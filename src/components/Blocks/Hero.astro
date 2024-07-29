@@ -1,9 +1,6 @@
 ---
-import { getSession } from "auth-astro/server"
 import { GetStarted } from "@components/GetStarted"
 import Description from "../Description.astro"
-
-const session = await getSession(Astro.request)
 ---
 
 <section
@@ -22,14 +19,10 @@ const session = await getSession(Astro.request)
         Don't be the guy that emails code back and forth 😐
     </Description>
     <div>
-        {
-            session ? (
-                <a href="/lessons" class="btn-lg btn-github">
-                    Go To Lessons
-                </a>
-            ) : (
-                <GetStarted className="btn-lg btn-github" client:load />
-            )
-        }
+        <GetStarted
+            className="btn-lg btn-github"
+            eventName="Sign Up Hero"
+            client:load
+        />
     </div>
 </section>

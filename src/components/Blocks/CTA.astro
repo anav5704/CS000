@@ -1,9 +1,6 @@
 ---
-import { getSession } from "auth-astro/server"
 import { GetStarted } from "@components/GetStarted"
 import Container from "../Container.astro"
-
-const session = await getSession(Astro.request)
 ---
 
 <Container>
@@ -18,15 +15,11 @@ const session = await getSession(Astro.request)
             <span class="text-git-gradient">Zero</span> Reasons To Not Start.
         </h1>
         <div>
-            {
-                session ? (
-                    <a href="/lessons" class="btn-lg btn-git">
-                        Go To Lessons
-                    </a>
-                ) : (
-                    <GetStarted className="btn-lg btn-git" client:load />
-                )
-            }
+            <GetStarted
+                className="btn-lg btn-git"
+                eventName="Sign Up CTA"
+                client:load
+            />
         </div>
     </section>
 </Container>

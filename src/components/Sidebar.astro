@@ -1,20 +1,17 @@
 ---
-import type { Progress } from "@prisma/client"
 import { getCollection } from "astro:content"
 import { CheckBox } from "@components/CheckBox"
 
 interface Props {
     lesson: "Solo" | "Team" | "Pro" | "Bonus"
-    progress: Progress | null
 }
 
-const { lesson, progress } = Astro.props
+const { lesson } = Astro.props
 
 let chapters: {
     title: string
     slug: string
     id: number
-    completed: boolean
 }[] = []
 
 switch (lesson) {
@@ -23,8 +20,7 @@ switch (lesson) {
         chapters = SoloLessons.map((lesson) => ({
             title: lesson.data.title,
             slug: lesson.slug,
-            id: lesson.data.id,
-            completed: progress?.soloCompleted.includes(lesson.data.id) || false
+            id: lesson.data.id
         }))
         break
     case "Team":
@@ -32,8 +28,7 @@ switch (lesson) {
         chapters = TeamLessons.map((lesson) => ({
             title: lesson.data.title,
             slug: lesson.slug,
-            id: lesson.data.id,
-            completed: progress?.teamCompleted.includes(lesson.data.id) || false
+            id: lesson.data.id
         }))
         break
     case "Pro":
@@ -41,8 +36,7 @@ switch (lesson) {
         chapters = ProLessons.map((lesson) => ({
             title: lesson.data.title,
             slug: lesson.slug,
-            id: lesson.data.id,
-            completed: progress?.proCompleted.includes(lesson.data.id) || false
+            id: lesson.data.id
         }))
 
         break
@@ -51,9 +45,7 @@ switch (lesson) {
         chapters = BonusLessons.map((lesson) => ({
             title: lesson.data.title,
             slug: lesson.slug,
-            id: lesson.data.id,
-            completed:
-                progress?.bonusCompleted.includes(lesson.data.id) || false
+            id: lesson.data.id
         }))
         break
 }

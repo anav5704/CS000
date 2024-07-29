@@ -2,7 +2,6 @@ import { isOpen, type } from '@context/ModalStore'
 import { MediaViewer } from "@components/MediaViewer"
 import { useStore } from '@nanostores/react'
 import { media } from '@context/ModalStore'
-import { Image } from "astro:assets"
 
 export const MediaModal = () => {
     const $isOpen = useStore(isOpen)
