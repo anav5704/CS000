@@ -1,16 +1,40 @@
 ---
-import Indeevar from "../../images/indeevar.jpg"
-import Jasveen from "../../images/jasveen.jpg"
-import Anav from "../../images/anav.jpg"
+import img1 from "../../images/1.webp"
+import img2 from "../../images/2.webp"
+import img3 from "../../images/3.webp"
+import img4 from "../../images/4.webp"
+import img5 from "../../images/5.webp"
+import img6 from "../../images/6.webp"
+import img7 from "../../images/7.webp"
+import img8 from "../../images/8.webp"
+import img9 from "../../images/9.webp"
+import img10 from "../../images/10.webp"
+import img11 from "../../images/11.webp"
 
-import { Image } from "astro:assets"
-import Header from "../Header.astro"
 import Description from "../Description.astro"
+import Header from "../Header.astro"
+import { Image } from "astro:assets"
 
-const images = [Indeevar, Jasveen, Anav]
+const data = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img8,
+    img9,
+    img10,
+    img11
+]
 
-const cols = [...images, ...images, ...images, ...images]
-const rows = [1, 2, 3]
+const images = [
+    [...data.sort(() => Math.random() - 0.5)],
+    [...data.sort(() => Math.random() - 0.5)],
+    [...data.sort(() => Math.random() - 0.5)]
+]
+
 const loops = [1, 2]
 ---
 
@@ -27,16 +51,16 @@ const loops = [1, 2]
     </Description>
     <div class="fade relative grid gap-5 md:gap-10 w-screen overflow-x-hidden">
         {
-            rows.map((row) => (
+            images.map((images, index) => (
                 <div class="w-full inline-flex flex-nowrap">
                     {loops.map(() => (
                         <ul
-                            class={`${row % 2 == 0 ? "animate-infinite-scroll-left" : "animate-infinite-scroll-right"} [&_li]:md:mx-5 [&_li]:mx-2.5 flex items-center justify-center md:justify-start`}
+                            class={`${index % 2 == 0 ? "animate-infinite-scroll-left" : "animate-infinite-scroll-right"} [&_li]:md:mx-5 [&_li]:mx-2.5 flex items-center justify-center md:justify-start`}
                         >
-                            {cols.map((col) => (
+                            {images.map((image) => (
                                 <li class="overflow-hidden rounded-xl h-16 w-16">
                                     <Image
-                                        src={col}
+                                        src={image}
                                         alt="image"
                                         width={80}
                                         height={80}
