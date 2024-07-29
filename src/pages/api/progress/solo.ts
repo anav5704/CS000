@@ -1,5 +1,4 @@
 import { getSession } from "auth-astro/server"
-import * as Sentry from "@sentry/astro"
 import type { APIRoute } from "astro"
 import { db } from "@prisma"
 
@@ -73,7 +72,6 @@ export const PATCH: APIRoute = async ({ request }) => {
     }
 
     catch (error) {
-        Sentry.captureException(error)
         return new Response(
             JSON.stringify({
                 message: "Internal server error"
