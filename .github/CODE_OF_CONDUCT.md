@@ -26,7 +26,7 @@ Enforcement of this code of conduct is the responsibility of the project maintai
 
 ## Reporting Violations
 
-To report a violation of this code of conduct, please contact [anav.webdev@gmail.com).](mailto:anav.webdev@gmail.com).
+To report a violation of this code of conduct, please contact [anav.webdev@gmail.com](mailto:anav.webdev@gmail.com).
 
 Reports will be handled confidentially and with respect.
 

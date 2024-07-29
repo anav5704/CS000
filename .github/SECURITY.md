@@ -4,7 +4,7 @@
 
 If you discover a security vulnerability in this project, please report it as soon as possible. You can report security issues by:
 
--   **Emailing**: [anav.webdev@gmail.com)](mailto:anav.webdev@gmail.com)
+-   **Emailing**: [anav.webdev@gmail.com](mailto:anav.webdev@gmail.com).
 
 Please provide detailed information about the vulnerability, including:
 

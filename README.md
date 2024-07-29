@@ -53,6 +53,7 @@ CS000: collaborative coding with Git and GitHub is an open source project that a
 -   [Auth.js](https://authjs.dev) - Google and GitHub OAuth providers.
 -   [Prisma](https://prisma.io) - Schema design and database interaction.
 -   [Neon](https://neon.tech) - Managed serverless Postgres database.
+-   [Umami](https://umami.is/) - Analytics and Event Tracking.
 
 ## 💖 Contribute
 
@@ -60,11 +61,11 @@ Developers of all skill levels are welcome to contribute to this project. If you
 
 ### Report Bug
 
-If you encounter any issues or bugs while using the CS000, please report them to help us improve. To report a bug, go [here](https://github.com/anav5704/CS000/issues/new?template=bug_report.md) and fill out the form.
+If you encounter any issues or bugs while using the CS000, please report them to help us improve. To report a bug, go [here](https://github.com/anav5704/CS000/issues/new?template=bug_report.md&title=[BUG]) and fill out the form.
 
 ### Request Feature
 
-If you have an idea for a new feature or an improvement to an existing feature, we’d love to hear about it. To request a feature, go [here](https://github.com/anav5704/CS000/issues/new?template=feature_request.md) and fill out the form.
+If you have an idea for a new feature or an improvement to an existing feature, we’d love to hear about it. To request a feature, go [here](https://github.com/anav5704/CS000/issues/new?template=feature_request.md&title=[FEATURE]) and fill out the form.
 
 ### Contribute Code
 
