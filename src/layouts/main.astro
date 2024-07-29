@@ -17,8 +17,8 @@ const pageUrl = new URL(Astro.url.pathname, Astro.site)
 const wesbiteStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Anav Chand",
-    alternateName: "Anav",
+    name: "CS000",
+    alternateName: "CS000",
     url: pageUrl
 }
 ---
@@ -40,15 +40,15 @@ const wesbiteStructuredData = {
         <script
             defer
             is:inline
-            src="https://cloud.umami.is/script.js"
-            data-website-id="85fbce64-883c-4a5e-8c7b-7923d355078d"
-            data-host-url="https://www.cs000.dev"></script>
-        <script
-            defer
-            is:inline
+            data-domains="cs000.dev"
             type="application/ld+json"
             set:html={JSON.stringify(wesbiteStructuredData)}
         />
+        <script
+            defer
+            is:inline
+            src="https://cloud.umami.is/script.js"
+            data-website-id="4da8afb7-7dfb-4d88-af20-dc1998c347b2"></script>
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />

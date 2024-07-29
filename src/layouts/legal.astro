@@ -25,13 +25,13 @@ const { title, description } = Astro.props
                 navigation: auto;
             }
         </style>
-        <meta charset="utf-8" />
         <script
             defer
             is:inline
+            data-domains="cs000.dev"
             src="https://cloud.umami.is/script.js"
-            data-website-id="85fbce64-883c-4a5e-8c7b-7923d355078d"
-            data-host-url="https://www.cs000.dev"></script>
+            data-website-id="4da8afb7-7dfb-4d88-af20-dc1998c347b2"></script>
+        <meta charset="utf-8" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
@@ -43,9 +43,9 @@ const { title, description } = Astro.props
     <meta property="og:image" content="/og.png" />
     <title>CS000 | {title}</title>
 
-    <body class="pt-[10vh] flex flex-col min-h-screen">
+    <body>
         <Navbar />
-        <main class="legal">
+        <main class="legal pt-[10vh]">
             <slot />
         </main>
         <Footer />

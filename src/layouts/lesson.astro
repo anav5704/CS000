@@ -3,10 +3,9 @@ import TableOfContentes from "../components/TableOfContentes.astro"
 import { ProgressToggle } from "@components/ProgressToggle"
 import ModalProvider from "@providers/ModalProvider.astro"
 import SpeedInsights from "@vercel/speed-insights/astro"
-import Breadcrumb from "../components/Breadcrumb.astro"
+import Breadcrumb from "@components/Breadcrumb.astro"
 import Sidebar from "@components/Sidebar.astro"
 import "../styles/globals.css"
-import { db } from "@prisma"
 
 interface Props {
     title: string
@@ -23,15 +22,6 @@ interface Props {
 }
 
 const { lessonData, title, description } = Astro.props
-const { user } = Astro.locals
-
-const progress = await db.progress.findFirst({
-    where: {
-        user: {
-            email: user?.email
-        }
-    }
-})
 ---
 
 <html lang="en">
@@ -51,9 +41,9 @@ const progress = await db.progress.findFirst({
         <script
             defer
             is:inline
+            data-domains="cs000.dev"
             src="https://cloud.umami.is/script.js"
-            data-website-id="85fbce64-883c-4a5e-8c7b-7923d355078d"
-            data-host-url="https://www.cs000.dev"></script>
+            data-website-id="4da8afb7-7dfb-4d88-af20-dc1998c347b2"></script>
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -70,7 +60,7 @@ const progress = await db.progress.findFirst({
         <Breadcrumb lesson={lessonData.lesson} title={title} />
         <ModalProvider />
         <main class="flex divide-x divide-zinc-200 grow">
-            <Sidebar lesson={lessonData.lesson} progress={progress} />
+            <Sidebar lesson={lessonData.lesson} />
             <article
                 class="h-[calc(100vh-64px)] scroll-smooth overflow-scroll no-scrollbar flex-1 lesson-content p-5 pb-[50vh]"
             >
