@@ -6,8 +6,25 @@ import { Image } from "astro:assets"
 
 import starCS000 from "../../images/star-cs000.png"
 
-const currentGoal = 10
-const stars = 1
+let stars = 0
+
+if (import.meta.env.PROD) {
+    const response = await fetch("https://api.github.com/repos/anav5704/CS000")
+    const data = await response.json()
+    stars = data.stargazers_count
+}
+
+let currentGoal = 0
+
+if (stars < 10) {
+    currentGoal = 10
+} else if (stars < 25) {
+    currentGoal = 25
+} else if (stars < 50) {
+    currentGoal = 50
+} else if (stars < 100) {
+    currentGoal = 100
+}
 ---
 
 <section id="star-repo" class="content">
@@ -46,7 +63,7 @@ const stars = 1
                     <span>Our Goal</span>
                     <span>{stars} / {currentGoal} Stars</span>
                 </p>
-                <div class="bg-rose-200 rounded-full">
+                <div class="bg-rose-200 rounded-full overflow-hidden">
                     <div
                         style={{ width: `${(stars / currentGoal) * 100}%` }}
                         class="h-4 bg-git-gradient rounded-full"

@@ -3,7 +3,13 @@ import Description from "@components/Description.astro"
 import Grid from "@components/Grid.astro"
 import Header from "@components/Header.astro"
 
-const activeIsseues = 5
+let activeIsseues = 0
+
+if (import.meta.env.PROD) {
+    const response = await fetch("https://api.github.com/repos/anav5704/CS000")
+    const data = await response.json()
+    activeIsseues = data.open_issues
+}
 
 const data = [
     {
@@ -12,11 +18,11 @@ const data = [
     },
     {
         title: "Request Feature",
-        href: "https://github.com/anav5704/CS000/issues/new?template=feature_request.md&title=[Feature]"
+        href: "https://github.com/anav5704/CS000/issues/new?template=feature_request.md&title=[FEATURE]"
     },
     {
         title: "Report Bug",
-        href: "https://github.com/anav5704/CS000/issues/new?template=bug_report.md&title=[Bug]"
+        href: "https://github.com/anav5704/CS000/issues/new?template=bug_report.md&title=[BUG]"
     },
     {
         title: "Contibution Guide",
