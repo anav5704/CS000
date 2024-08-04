@@ -9,6 +9,8 @@ interface Props {
 }
 
 const { title, description } = Astro.props
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href
 ---
 
 <html lang="en">
@@ -31,18 +33,22 @@ const { title, description } = Astro.props
             data-domains="cs000.dev"
             src="https://cloud.umami.is/script.js"
             data-website-id="4da8afb7-7dfb-4d88-af20-dc1998c347b2"></script>
-        <meta charset="utf-8" />
+
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} /></head
-    >````
-    <meta name="description" content={description} />
-    <meta property="og:site_name" content="CS000" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta property="og:image" content="/og.png" />
-    <title>CS000 | {title}</title>
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description} />
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        <title>CS000 | {title}</title>
+        <meta charset="utf-8" />
 
+        <meta property="og:title" content={"CS000 | " + title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:site_name" content="CS000" />
+        <meta property="og:image" content="/og.png" />
+        <meta property="og:url" content={pageUrl} />
+    </head>
     <body>
         <Navbar />
         <main class="legal pt-[10vh]">
@@ -50,6 +56,4 @@ const { title, description } = Astro.props
         </main>
         <Footer />
     </body>
-
-
 </html>
