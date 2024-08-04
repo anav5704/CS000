@@ -22,10 +22,10 @@
     <br />
     Don't be the guy that emails code back and forth.
   </h3>
-  <a href="/https://cs000.dev/">Get Started</a> •
-   <a href="/https://cs000.dev/contribute">Contribute</a> •
-   <a href="/https://discord.gg/cJxBsq8Qmh">Discord</a> •
-  <a href="/https://cs000.dev/about#faq">FAQ</a>
+  <a href="https://cs000.dev/">Get Started</a> •
+   <a href="https://cs000.dev/contribute">Contribute</a> •
+   <a href="https://discord.gg/cJxBsq8Qmh">Discord</a> •
+  <a href="https://cs000.dev/about#faq">FAQ</a>
 </div>
 
 <br />
