@@ -33,6 +33,8 @@ export const UserMenu = ({ user }: Props) => {
         type.set("auth")
     }
 
+    console.log(user)
+
     return (
         <div>
             {user ? (

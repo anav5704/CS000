@@ -1,6 +1,7 @@
 <div class="h-[400px] w-full grid place-content-center relative">
     <div
-        class="content-[''] animate-pulse rounded-2xl absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-full bg-zinc-200"
+        id="chartParent"
+        class="content-[''] animate-pulse rounded-2xl absolute top-0 left-1/2 -translate-x-1/2 w-full md:w-[900px] h-full bg-zinc-200"
     >
     </div>
     <div id="chart1"></div>
@@ -26,6 +27,8 @@
             ["GitHub", 2]
         ])
 
+        const chartwidth = document.getElementById("chartParent").clientWidth
+
         var options = {
             chartArea: {
                 top: 10,
@@ -44,7 +47,7 @@
             pieSliceText: "none",
             tooltip: {},
             height: 400,
-            width: 900
+            width: chartwidth
         }
 
         var chart1 = new google.visualization.PieChart(

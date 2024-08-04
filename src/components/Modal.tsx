@@ -15,7 +15,7 @@ export const Modal = ({ header, children, isOpen, handleClose, allowClose = true
         <div className="bg-black/25 backdrop-blur-xl fixed z-50 top-0 left-0 h-screen w-screen flex items-center justify-center" >
             <dialog
                 open={isOpen}
-                className="relative bg-white rounded-2xl text-center p-7 flex flex-col items-center gap-10 w-full max-w-md"
+                className="relative bg-white rounded-2xl text-center p-7 flex flex-col items-center gap-10 w-full max-w-sm md:max-w-md"
             >
                 {allowClose && <div
                     onClick={handleClose}

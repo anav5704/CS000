@@ -79,7 +79,7 @@
 
 @layer components {
     .content {
-        @apply space-y-3 md:space-y-7;
+        @apply space-y-7;
     }
 
     .legal {
