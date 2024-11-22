@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro"
 import Footer from "../components/Footer.astro"
+import "@fontsource-variable/dm-sans"
 import "../styles/globals.css"
 
 interface Props {
@@ -11,8 +12,6 @@ interface Props {
 const { title, description } = Astro.props
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href
-
-const prod = import.meta.env.PROD
 ---
 
 <html lang="en">

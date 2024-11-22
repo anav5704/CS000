@@ -1,8 +1,8 @@
 ---
 import ModalProvider from "@providers/ModalProvider.astro"
-import SpeedInsights from "@vercel/speed-insights/astro"
 import Navbar from "../components/Navbar.astro"
 import Footer from "../components/Footer.astro"
+import "@fontsource-variable/dm-sans"
 import "../styles/globals.css"
 
 interface Props {
@@ -64,8 +64,6 @@ const wesbiteStructuredData = {
         <meta property="og:site_name" content="CS000" />
         <meta property="og:image" content="/og.png" />
         <meta property="og:url" content={pageUrl} />
-
-        <SpeedInsights />
     </head>
     <body class="pt-[10vh] flex flex-col min-h-screen space-y-16 md:space-y-24">
         <Navbar />

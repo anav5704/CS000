@@ -2,9 +2,10 @@
 import TableOfContentes from "../components/TableOfContentes.astro"
 import { ProgressToggle } from "@components/ProgressToggle"
 import ModalProvider from "@providers/ModalProvider.astro"
-import SpeedInsights from "@vercel/speed-insights/astro"
 import Breadcrumb from "@components/Breadcrumb.astro"
 import Sidebar from "@components/Sidebar.astro"
+import "@fontsource-variable/jetbrains-mono"
+import "@fontsource-variable/dm-sans"
 import "../styles/globals.css"
 
 interface Props {
@@ -64,8 +65,6 @@ const pageUrl = new URL(Astro.url.pathname, Astro.site).href
         <meta property="og:site_name" content="CS000" />
         <meta property="og:image" content="/og.png" />
         <meta property="og:url" content={pageUrl} />
-
-        <SpeedInsights />
     </head>
     <body class="flex flex-col min-h-screen">
         <Breadcrumb lesson={lessonData.lesson} title={title} />
