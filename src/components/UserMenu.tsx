@@ -1,13 +1,13 @@
 import { isOpen, type } from "@context/ModalStore"
 import { progress } from "@context/ProgressStore"
 import { useStore } from "@nanostores/react"
+import { TestGroup } from "@prisma/client"
 import type { UserProgress } from "@types"
 import { useEffect } from "react"
 
 interface Props {
     user?: UserProgress | null
 }
-
 
 export const UserMenu = ({ user }: Props) => {
     useEffect(() => {
@@ -19,6 +19,7 @@ export const UserMenu = ({ user }: Props) => {
                 bonusCompleted: user?.progress?.bonusCompleted ?? [],
             })
         }
+
     }, [user])
 
     const $isOpen = useStore(isOpen)
@@ -33,22 +34,28 @@ export const UserMenu = ({ user }: Props) => {
         type.set("auth")
     }
 
-    console.log(user)
+    const A = user?.testGroup === TestGroup.A
 
     return (
         <div>
             {user ? (
                 <button
                     onClick={handleOpenAccountModal}
-                    data-umami-event="User Menu"
+                    data-umami-event={A ? "Progress Image" : "Progress Text"}
                 >
-                    <img
+                    {A ? (
+                        <img
 
-                        src={user.image ?? ""}
-                        alt={user.name ?? ""}
-                        height={30} width={30}
-                        className="rounded-full"
-                    />
+                            src={user.image ?? ""}
+                            alt={user.name ?? "Progress"}
+                            height={32} width={32}
+                            className="rounded-full"
+                        />
+                    ) : (
+                        <div>
+                            <p className="hover:underline">Progress</p>
+                        </div>
+                    )}
                 </button>
             ) : (
                 <div>

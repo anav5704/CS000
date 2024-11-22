@@ -21,11 +21,5 @@ if (user) {
 ---
 
 <div class="w-20 grid place-content-end">
-    {
-        skeleton ? (
-            <div class="h-[30px] w-[30px] rounded-full bg-github-gradient" />
-        ) : (
-            <UserMenu user={userProgress} client:load />
-        )
-    }
+    {skeleton ? <p>Loading</p> : <UserMenu user={userProgress} client:load />}
 </div>

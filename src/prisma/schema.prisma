@@ -8,16 +8,22 @@ datasource db {
 }
 
 model User {
-  id       String    @id @default(cuid())
-  email    String    @unique
-  name     String
-  image    String
-  progress Progress?
+  id        String    @id @default(cuid())
+  email     String    @unique
+  name      String
+  image     String
+  testGroup TestGroup @default(A)
+  progress  Progress?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([email])
+}
+
+enum TestGroup {
+  A
+  B
 }
 
 model Progress {

@@ -1,5 +1,6 @@
 import Google from '@auth/core/providers/google';
 import GitHub from '@auth/core/providers/github';
+import { TestGroup } from "@prisma/client";
 import { defineConfig } from 'auth-astro';
 import { db } from "@prisma";
 
@@ -24,13 +25,30 @@ export default defineConfig({
                 })
 
                 if (!user) {
+                    const prevUser = await db.user.findFirst({
+                        select: {
+                            testGroup: true
+                        },
+                        orderBy: {
+                            createdAt: "desc",
+                        }
+                    })
+
+                    const testGroup = prevUser.testGroup === TestGroup.A ? TestGroup.B : TestGroup.A
+
                     await db.user.create({
                         data: {
                             email: session.user.email,
                             name: session.user.name,
                             image: session.user.image,
+                            testGroup,
                             progress: {
-                                create: {}
+                                create: {
+                                    soloCompleted: null,
+                                    teamCompleted: null,
+                                    proCompleted: null,
+                                    bonusCompleted: null
+                                }
                             }
                         },
                     })
