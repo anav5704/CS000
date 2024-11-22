@@ -1,7 +1,6 @@
 import { isOpen, type } from "@context/ModalStore"
 import { progress } from "@context/ProgressStore"
 import { useStore } from "@nanostores/react"
-import { TestGroup } from "@prisma/client"
 import type { UserProgress } from "@types"
 import { useEffect } from "react"
 
@@ -34,10 +33,10 @@ export const UserMenu = ({ user }: Props) => {
         type.set("auth")
     }
 
-    const A = user?.testGroup === TestGroup.A
+    const A = user?.testGroup === "A"
 
     return (
-        <div>
+        <>
             {user ? (
                 <button
                     onClick={handleOpenAccountModal}
@@ -52,23 +51,18 @@ export const UserMenu = ({ user }: Props) => {
                             className="rounded-full"
                         />
                     ) : (
-                        <div>
-                            <p className="hover:underline">Progress</p>
-                        </div>
+                        <p className="hover:underline">Progress</p>
                     )}
                 </button>
             ) : (
-                <div>
-                    <button
-                        onClick={handleOpenAuthModal}
-                        className="hover:underline"
-                        data-umami-event="Sign Up Navbar"
-                    >
-                        Sign Up
-                    </button>
-                </div>
-            )
-            }
-        </div >
+                <button
+                    onClick={handleOpenAuthModal}
+                    className="hover:underline"
+                    data-umami-event="Sign Up Navbar"
+                >
+                    Sign Up
+                </button>
+            )}
+        </ >
     )
 }

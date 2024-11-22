@@ -21,12 +21,9 @@ export const GetStarted = ({ className, eventName }: Props) => {
         (async () => {
             const response = await fetch("/api/user/auth")
             const data = await response.json()
-            console.log(data)
-
             setUser(data.authenticated)
         })()
     }, [])
-
 
     return (
         user ? (
