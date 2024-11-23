@@ -1,0 +1,23 @@
+---
+export const prerender = true
+
+import Description from "@components/Description.astro"
+import Header from "@components/Header.astro"
+import Layout from "../layouts/main.astro"
+import { Lock } from "lucide-react"
+---
+
+<Layout
+    title="Error 403"
+    description="Learn how to work on coding group projects the modern way in 3 days for free. Don't be the guy that emails code back and forth."
+>
+    <main class="w-screen grid place-content-center gap-10">
+        <div class="mx-auto bg-git-gradient rounded-2xl w-fit p-5 text-white">
+            <Lock size={25} />
+        </div>
+        <Header> Error code <span class="text-git-gradient">403</span></Header>
+        <Description
+            >Make sure you are logged in to your CS000 account.</Description
+        >
+    </main>
+</Layout>
