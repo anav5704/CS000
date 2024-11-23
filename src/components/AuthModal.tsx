@@ -6,7 +6,6 @@ import { useEffect, useState } from "react"
 import { Modal } from "@components/Modal"
 
 export const AuthModal = () => {
-    const [forceOpen, setForceOpen] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
     const $isOpen = useStore(isOpen)
     const $type = useStore(type)
@@ -36,9 +35,7 @@ export const AuthModal = () => {
             const data = await response.json()
 
             if (!data.authenticated) {
-                setForceOpen(true)
-                isOpen.set(!$isOpen)
-                type.set("auth")
+                window.location.assign("/403")
             }
 
         }
@@ -51,7 +48,6 @@ export const AuthModal = () => {
             isOpen={$isOpen && $type == "auth"}
             handleClose={handleClose}
             header="Create CS000 Account"
-            allowClose={!forceOpen}
         >
             <div className="flex flex-col items-center space-y-5">
                 <Button
