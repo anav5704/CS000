@@ -57,16 +57,4 @@ CS000: collaborative coding with Git and GitHub is an open source project that a
 
 ## 💖 Contribute
 
-Developers of all skill levels are welcome to contribute to this project. If you are student who is new to web development, feel free to report bugs or request features. If you have experience in the web development field, you can contribute code to the project. Before you start, make sure there are no existing [issues](https://github.com/anav5704/CS000/issues) or [pull requests](https://github.com/anav5704/CS000/pulls) that are related to your contribution.
-
-### Report Bug
-
-If you encounter any issues or bugs while using the CS000, please report them to help us improve. To report a bug, go [here](https://github.com/anav5704/CS000/issues/new?template=bug_report.md&title=[BUG]) and fill out the form.
-
-### Request Feature
-
-If you have an idea for a new feature or an improvement to an existing feature, we’d love to hear about it. To request a feature, go [here](https://github.com/anav5704/CS000/issues/new?template=feature_request.md&title=[FEATURE]) and fill out the form.
-
-### Contribute Code
-
-If you know your way around an Astro.js project, you can contribute code to CS000. To contribute, first read the [contribution guidelines](https://github.com/anav5704/CS000/blob/main/.github/CONTRIBUTING.md) and [code of conduct](https://github.com/anav5704/CS000/blob/main/.github/CODE_OF_CONDUCT.md). Once you're familiar with our guidelines, make your changes and submit a pull request.
+Developers of all skill levels are welcome to contribute to this project. If you are student who is new to web development, feel free to [report bugs](https://github.com/anav5704/CS000/issues/new?template=bug_report.md&title=[BUG]) or [request feature](https://github.com/anav5704/CS000/issues/new?template=feature_request.md&title=[FEATURE]). If you have experience in the web development field, you can [contribute code](https://github.com/anav5704/CS000/blob/main/.github/CONTRIBUTING.md) to the project. Before you start, make sure there are no existing [issues](https://github.com/anav5704/CS000/issues) or [pull requests](https://github.com/anav5704/CS000/pulls) that are related to your contribution.
