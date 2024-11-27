@@ -5,11 +5,11 @@ id: 6
 
 # Pull And Push
 
-Previously, we could simply run `git pull` to update our local copy of the repo and `git push` to push our changes to our repo on GitHub. But, did you ever wonder where Git pulls from or where Git pushes to? Did you ever wondwer who told Git where to pull from and where to push to?
+Previously, we could simply run `git pull` to update our local copy of the repo and `git push` to push our changes to our repo on GitHub. But, did you ever wonder where Git pulls from or where Git pushes to? Did you ever wonder who told Git where to pull from and where to push?
 
 # Understanding Remote
 
-A remote repository is a Git repository that is hosted on a remote server. In our case, this is the repo we create and clone from GitHub. In order to pull or push changes to our repo, first need to save the remote repository's URL. This is the command we use to add a remote repository:
+A remote repository is a Git repository that is hosted on a remote server. In our case, this is the repo we create and clone from GitHub. In order to pull or push changes to our repo, we first need to save the remote repository's URL. This is the command we use to add a remote repository:
 
 ```bash
 git remote add <remote-name> <remote-url>
@@ -60,7 +60,7 @@ git push -u origin main
 
 ## When Cloning Repo
 
-In the team lesson, we started by cloning the repo from GitHub. We then made some changes to the code and committed them. Neither did we set the upstream tracking branch ourselves, nor did we paste code that GitHub gave. When cloning a repo, Git automatically adds are remote repo with the name `origin` and an upstream tracking branch with the name `main`.
+In the team lesson, we started by cloning the repo from GitHub. We then made some changes to the code and committed them. Neither did we set the upstream tracking branch ourselves, nor did we paste the code that GitHub provided. When cloning a repo, Git automatically adds our remote repo with the name `origin` and an upstream tracking branch with the name `main`.
 
 We can verify this by running the following command:
 
@@ -107,7 +107,7 @@ Just imaging we work for a while and finish the feature. Now we want to push it 
 
 ## Push Code
 
-In order to push our code, we cannot run `git push` because Git does not know where to push to. We have to specify the remote repository and the branch we want to push to.
+In order to push our code, we cannot run `git push` because Git does not know where to push. We have to specify the remote repository and the branch we want to push to.
 
 ```bash
 git push -u origin feature/user-auth

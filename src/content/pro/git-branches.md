@@ -84,7 +84,7 @@ git branch -D user-auth
 
 # Naming Convention
 
-Just like we follow conventional commits to create clean commit messages, we also follow a simple structure for name Git branches. You should the branch with lower kebab case, prefixed with the branch type. For keeping thins simple, we will only use `feature` and `bugfix` branches.
+Just like we follow conventional commits to create clean commit messages, we also follow a simple structure for name Git branches. You should name the branch with lower kebab case, prefixed with the branch type. To keep things simple, we will only use `feature` and `bugfix` branches.
 
 ## Feature Branch
 

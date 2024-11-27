@@ -5,15 +5,15 @@ id: 5
 
 # Documentation
 
-Adding documentation to your repos may seem like a chore. They're boring and have no real value. **Wrong**. It is one of the most underrated pieces of text, especially when you are a beginner. Firstly, it shows that you are taking programming seriously and have the initiative to write docs. Secondly, it is the only way a new person can know what's inside your repo. Whether your repo has 10 or 10k lines of code, no one will open those folders. Having docs is a sneak peek into what's inside your repo.
+Adding documentation to your repos might feel like a chore. They're boring and have no real value. **Wrong**. It is one of the most underrated pieces of text, especially when you are a beginner. Firstly, it shows that you are taking programming seriously and have the initiative to write docs. Secondly, it is the only way a new person can know what's inside your repo. Whether your repo has 10 or 10,000 lines of code, no one will open those folders. Having documentation provides a sneak peek into what's inside your repo.
 
 # Writing Markdown
 
-Yes you're going to learn to write a new language now. So markdown is like plain text with some special characters here and there. It allows you to write simple text that gets rendered as HTML. If you don't know HTML, that's fine. In fact, markdown was actually invented for non-technical people to write content for the web. Let's go over the basics you will need to write your docs.
+Yes, you're going to learn to write in a new language now. So markdown is like plain text with some special characters here and there. It allows you to write simple text that gets rendered as HTML. If you don't know HTML, that's fine. In fact, markdown was actually invented for non-technical people to write content for the web. Let's go over the basics you will need to write your docs.
 
 ## Headings
 
-Headings are the title of your document. They are written in the format `# Heading`. The number of `#` determines the size of the heading. Heading 1 is the largest heading, heading 6 is the smallest.
+Headings are the titles of your document. They are written in the format `# Heading`. The number of `#` symbols determines the size of the heading: Heading 1 is the largest, and Heading 6 is the smallest.
 
 ```markdown
 # Heading 1
@@ -25,15 +25,15 @@ Headings are the title of your document. They are written in the format `# Headi
 
 ## Paragraphs
 
-Paragraphs are the text that you write. No special formatting is needed.
+Paragraphs are the text you write, and no special formatting is needed.
 
 ```markdown
-Paragraphs are the text that you write.
+Paragraphs are the text you write.
 ```
 
 ## Lists
 
-Lists are the way to add items to your document. You can make bulleted lists or numbered lists.
+Lists allow you to add items to your document. You can create bulleted or numbered lists.
 
 ```markdown
 -   Item 1
@@ -47,7 +47,7 @@ Lists are the way to add items to your document. You can make bulleted lists or 
 
 ## Links
 
-Links are the way to link to other pages on your site. You can link to a page on the same site or to an external site.
+Links allow you to connect to other pages on your site. You can link to a page within the same site or to an external site.
 
 ```markdown
 [Internal Link](#next-subtitle)
@@ -56,7 +56,7 @@ Links are the way to link to other pages on your site. You can link to a page on
 
 ## Images
 
-Images are the way to add images to your document. You can add images to your document by using the `!` syntax.
+Images allow you to add visuals to your document. You can insert them using `!` syntax.
 
 ```markdown
 ![Local Image](./image.webp)
@@ -65,7 +65,7 @@ Images are the way to add images to your document. You can add images to your do
 
 ## Code
 
-Markdown is great for writing text. But what if you want to write code? Well, you can do that too. You can use the ` ``` ` syntax to add code blocks with the language specified.
+Markdown is great for writing text, but what if you want to write code? You can do that too by using the ` ``` ` syntax to create code blocks with the language specified.
 
 ````markdown
 ```cpp
@@ -77,7 +77,7 @@ int function add(int a, int b) {
 
 ## Example
 
-Funny enough, all the lessons on CS000 are written using Markdown. Here is what this page looks like (did we break the 4th wall?):
+Funny enough, all the lessons on CS000 are written using Markdown. Here's what this page looks like (did we just break the fourth wall?):
 
 ````markdown
 # Documentation
@@ -86,7 +86,7 @@ Adding documentation to your...
 
 # Writing Markdown
 
-Yes you're going to learn to...
+Yes, you're going to learn to...
 
 ## Headings
 
@@ -102,15 +102,15 @@ Headings are the title of your...
 
 ## Paragraphs
 
-Paragraphs are the text that...
+Paragraphs are the text you...
 
 ```markdown
-Paragraphs are the text that...
+Paragraphs are the text you...
 ```
 
 ## Links
 
-Links are the way to link to other...
+Links allow you to connect...
 
 ```markdown
 [Internal Link](#next-subtitle)
@@ -134,6 +134,6 @@ code
     └── sum.exe
 ```
 
-The `README.md` file is the file that will be displayed on the GitHub page of your repo. Add your docs and then push the changes to GitHub. You can find the docs under the list of files in your GitHub repo. Here is what it would look like once you push your changes:
+The `README.md` file is displayed on your GitHub repository's page. Add your documentation, then push the changes to GitHub. You can view the documentation under the list of files in your GitHub repo. Here's what it will look like once you push your changes:
 
 ![README Example](./images/readme-example.webp)

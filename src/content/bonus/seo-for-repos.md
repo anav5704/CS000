@@ -5,18 +5,18 @@ id: 6
 
 # SEO For Repos
 
-SEO, short for Search Engine Optimization, is the process of improving the performance, experience, and authority of your website. It is important to have a good SEO strategy to get your website to show up in search results. Now you may not know web development, and you may not have a website to add SEO to. But that doesn't matter. There is a free website with great SEO already made for you: GitHub.
+SEO, short for Search Engine Optimization, is the process of improving the performance, experience, and authority of your website. It is important to have a good SEO strategy to get your website to show up in search results. You might not know web development, and you might not have a website to add SEO to, but that doesn't matter. There's a free website with great SEO already set up for you: GitHub.
 
 # Meta Tags
 
-In web development, meta tags are HTML elements that hold information about the website which browsers use. This information is also used by Google to rank websites on search results. The `title` of your repo maps to GitHub's title tag for your repo and same with the `description`. This is why you must carefully name your repo and always add a description that has keywords.
+In web development, meta tags are HTML elements that provide information about a website, which browsers use. This information is also used by Google to rank websites in search results. The `title` of your repo maps to GitHub's title tag, and the same applies to the `description`. This is why it's important to carefully name your repo and always add a description that includes relevant keywords.
 
 ![Google Search Example](./images/google-search-example.webp)
 
-Here you can see I have searched for `Batman Discord Bot`. I have scrolled a bit, so the 3rd result is my repo from GitHub and the 4th is from my [personal website](https://www.anav.dev). I had to work hard to get my own website to show up in the search results. But to get GitHub to show up is as easy as filling the `Title` and `Description` fields.
+Here, you can see that I've searched for `Batman Discord Bot`. After scrolling a bit, the third result is my GitHub repo, and fourth is from my [personal website](https://www.anav.dev). I had to work hard to get my website to appear in the search results, but getting GitHub to show up is as simple as filling in the `Title` and `Description` fields.
 
 # Topics
 
-GitHub Topics are a way to categorize your repo. They allow users to explore repositories in a particular subject area, find projects to contribute to, and discover new solutions to a specific problem. You can add topics to your repo to make it easier for others to find it. You can add topics to your repo by clicking on the `Edit` button on the right side of the repo page.
+GitHub Topics help categorize your repo, allowing users to explore repositories by subject, find projects to contribute to, and discover new solutions to specific problems. You can add topics to your repo to make it easier for others to find. To add topics, click the `Edit` button on the right side of the repo page.
 
 ![Repository Topics](./images/repository-topics.webp)

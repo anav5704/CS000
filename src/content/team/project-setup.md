@@ -9,7 +9,7 @@ Now let's go through how you would go about using Git and GitHub when doing grou
 
 # Create a Repo
 
-Creating repositories was explained in the CS000 Solo lesson. The only thing were doing differently is time is that the repo will be `private`. This is because sharing of coding during assignments can lead to penalties.
+Creating repositories was explained in the CS000 Solo lesson. The only thing were doing differently this time is that the repo will be `private`. This is because sharing of coding during assignments can lead to penalties.
 
 # Add Collaborators
 

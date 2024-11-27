@@ -9,8 +9,8 @@ If you are the `owner` of the assignment repository, you can approve `contributo
 
 # Merge Pull Request
 
-To merge a `pr` you will need to first go to the `pull request` tab on your repo. You will see a list of all the `prs` that are open and need to be merged. Chose one and click the green `Merge pull request` button.
+To merge a `pr` you will need to first go to the `pull request` tab on your repo. You will see a list of all the `prs` that are open and need to be merged. Choose one and click the green `Merge pull request` button.
 
 ![Merge Pull Request](./images/merge-pull-request.webp)
 
-This will prompt you to fill in some details about the merge. Most of it will aleady be filled in for you, so leave those as is.
+This will prompt you to fill in some details about the merge. Most of it will already be filled in for you, so leave those as is.

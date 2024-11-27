@@ -103,10 +103,10 @@ Now you can use the `g` command followed by a Git command alias.
 g ci -m "Commit message"
 ```
 
-Just for reference, if you didn't set up this, you'd be typing this:
+Just for reference, if you hadn't set this up, you'd be typing this instead:
 
 ```bash
 git commit -m "Commit message"
 ```
 
-We saved typing 6 whole letters worth of time per commit!
+We saved 6 whole letters' worth of typing time per commit!

@@ -5,7 +5,7 @@ id: 5
 
 # Git Overview
 
-Git is a command line tool that lets you manage your code. Git is a software that lives on your computer. As a solo developer, the main feature of Git that you will use mostly is its ability to version your code. You know how there are checkpoints in games? So when you die you re-spawn there. That's what Git does. You can create your own checkpoints and you can go back to them.
+Git is a command line tool that lets you manage your code. Git is a software that lives on your computer. As a solo developer, the main feature of Git that you will use mostly is its ability to version your code. You know how there are checkpoints in games? So when you die you respawn there. That's what Git does. You can create your own checkpoints and you can go back to them.
 
 # Downloading Git
 

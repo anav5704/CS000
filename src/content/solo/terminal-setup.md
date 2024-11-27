@@ -45,7 +45,7 @@ The starting directory is the directory that the terminal loads up when you open
 
 ## Create Directory
 
-To keep things organized, let's make a `code` directory. You can place this directory anywhere on your computer. Mine is locateda at `C:/Users/anav/code`. This is what it loks like:
+To keep things organized, let's make a `code` directory. You can place this directory anywhere on your computer. Mine is located at `C:/Users/anav/code`. This is what it looks like:
 
 ![Starting Directory](./images/staring-directory.webp)
 
