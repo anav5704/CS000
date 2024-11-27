@@ -36,7 +36,7 @@ Developer B makes the following change:
 cout << "Hello World! I am Developer B" << endl;
 ```
 
-Now let's say you are Developer A working on the repo on your computer. Developer B is faster than you, so he already made the change and created a pull request. This pull request lso got merged into the main repo. If you try to pull the changes, you will get a merge conflict.
+Now let's say you are Developer A working on the repo on your computer. Developer B is faster than you, so he already made the change and created a pull request. This pull request also got merged into the main repo. If you try to pull the changes, you will get a merge conflict.
 
 Your `app.cpp` file will look like this:
 
@@ -89,7 +89,7 @@ In order to resolve the conflict, you have to delete 2 things: delete the code y
 >>>>>>> main (Incoming Change)
 ```
 
-Suppose in this case, we want to keep developer B's code. Our resoled version of the code will look like this:
+Suppose in this case, we want to keep developer B's code. Our resolved version of the code will look like this:
 
 ```cpp
 #include <iostream>

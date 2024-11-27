@@ -96,11 +96,11 @@ Then you can pull the changes from the main branch.
 git pull
 ```
 
-You can now create a new branch and start working on the new feature. If you did not delete your previous feature branch, you want to continue working on it with the new changes from the main branchk, you can do the following.
+You can now create a new branch and start working on the new feature. If you did not delete your previous feature branch and want to continue working on it with the new changes from the main branch, you can do the following.
 
 ```bash
 git checkout feature/validate-user-input
 git merge main
 ```
 
-This will switch to the feature branch and merge the changes from the main branch.
+This will switch to the feature branch and merge the latest changes from the main branch.

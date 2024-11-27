@@ -5,7 +5,7 @@ id: 6
 
 # Forking and Cloning
 
-Remember how we first wrote code and then pushed it to GitHub? When you are working as a `collaborator`, the code with already be on GitHub. You will have to download it onto your computer first and then continue the cycle.
+Remember how we first wrote code and then pushed it to GitHub? When you are working as a `collaborator`, the code will already be on GitHub. You will have to download it onto your computer first and then continue the cycle.
 
 # Accept Invitation
 
