@@ -40,7 +40,7 @@ This person will only have to update the repo on their computer. They have the m
 
 ## Contributor
 
-This is the contributor got their pull request merged. This person will not have to do anything.
+This is the contributor whose pull request was merged. This person will not have to do anything.
 
 ## Other Contributors
 
@@ -56,7 +56,7 @@ This will update your forked repo with the latest version of the code from GitHu
 
 # Pulling From GitHub
 
-Remember `Git Clone` command we used earlier? This is what we used to download the whole repo from GitHub at first. But this time we already have the repo on our computer. So all we noeed to do is to pull the latest version of the code from GitHub.
+Remember `Git Clone` command we used earlier? This is what we used to download the whole repo from GitHub at first. But this time we already have the repo on our computer. So all we need to do is to pull the latest version of the code from GitHub.
 
 ```bash
 git pull

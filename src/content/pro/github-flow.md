@@ -5,7 +5,7 @@ id: 5
 
 # GitHub Flow
 
-A Git workflow is a set of rules or recommendation that dictate how you work with Git. This comes in handy when working with Git `branches`. The team workflow and pro workflow can be seen as examples of Git workflows, but they are not official. Those two were introduced to explain how to use what you learned in the team and pro lessons. The common real world workflows include:
+A Git workflow is a set of rules or recommendations that dictate how you work with Git. This comes in handy when working with Git `branches`. The team workflow and pro workflow can be seen as examples of Git workflows, but they are not official. Those two were introduced to explain how to use what you learned in the team and pro lessons. The common real world workflows include:
 
 -   [Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 -   [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow)

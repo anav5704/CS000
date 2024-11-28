@@ -1,6 +1,6 @@
 # 📚 Contribute to CS000
 
-CS000 is an open source project, and we welcome contributions from the community. This guide will go over how to set up your development environment and contribute code to the project. It will also highlight some stnadards and best practices to follow when contributing.
+CS000 is an open source project, and we welcome contributions from the community. This guide will go over how to set up your development environment and contribute code to the project. It will also highlight some standards and best practices to follow when contributing.
 
 ## Prerequisites
 
@@ -96,7 +96,7 @@ CS000 does not have any pre-commit hooks. However, we encourage you to lint your
 npx astro check
 ```
 
-Fix any linting warnings a nd errors before submitting a pull request.
+Fix any linting warnings and errors before submitting a pull request.
 
 ## Committing
 
